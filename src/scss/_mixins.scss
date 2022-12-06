@@ -1,0 +1,9 @@
+@use "variables" as v;
+
+/* Responsivitet */
+
+    @mixin desktop {
+        @media screen and (min-width:v.$desktop_breakpoint) {
+            @content;
+        }     
+    }

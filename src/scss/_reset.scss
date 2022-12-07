@@ -3,6 +3,8 @@
 body {
     margin:0;
     height:100vh;
+    font-family:rubik;
+    scroll-behavior: smooth;
     .welcome__page{
         height:100%;
         background-image: url('../assets/Golfcourse_image.jpg');
@@ -12,14 +14,14 @@ body {
         .welcome__page__navigation{
             display:flex;
             height:100px;
-            background-color: v.$seventhcolor;
+            background-color: v.$sixthcolor;
             width:100%;
             .welcome__page__navigation__title{
                 width:100%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                color:v.$secondarycolor;
+                color:v.$primarycolor;
             }
         }
         .welcome__page__textbox{

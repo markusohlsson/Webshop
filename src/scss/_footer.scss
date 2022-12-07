@@ -19,10 +19,10 @@ footer {
         li {
             margin: 5px;
         }
-    }
 
-    @include m.desktop {
-
+        @include m.desktop {
+            flex-direction: row;
+        }
     }
 
     div {

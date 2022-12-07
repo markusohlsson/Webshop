@@ -30,10 +30,13 @@ footer {
         flex-direction: row;
         justify-content: center;
 
-        i {
-            margin: 0px;
-            padding: 20px;
-            font-size: 20px;
+        a {
+            i {
+                color: black;
+                margin: 0px;
+                padding: 20px;
+                font-size: 26px;
+            }
         }
     }
 

@@ -1,6 +1,48 @@
 import { Product } from "../models/Product";
 
-let products: Product[];
+/* Headcovers */
+
+let headcover1: Product = new Product(
+  "Headcover Gris",
+  "499",
+  "Headcovers som passar för din driver. Finns i en mängd olika motiv så att du kan finna just din favorit.",
+  "Headcovers",
+  "..assets/products/Headcover_1.jpg" // har jag tänkt fel här???
+);
+
+let headcover2: Product = new Product(
+  "Headcover Ko",
+  "499",
+  "Headcovers som passar för din driver. Finns i en mängd olika motiv så att du kan finna just din favorit.",
+  "Headcovers",
+  "..assets/products/Headcover_2.jpg" // har jag tänkt fel här???
+);
+
+let headcover3: Product = new Product(
+  "Headcover Älg",
+  "499",
+  "Headcovers som passar för din driver. Finns i en mängd olika motiv så att du kan finna just din favorit.",
+  "Headcovers",
+  "..assets/products/Headcover_3.jpg" // har jag tänkt fel här???
+);
+
+let headcovers: Product[] = [headcover1, headcover2, headcover3]; // tänker jag fel här?
+
+/* Golfklubbor */
+
+let proFliHi: Product = new Product(
+  "Pro Fli Hi",
+  "2799",
+  "Mizuno Pro har alltid varit Mizunos mest innovationsinriktade serie med avancerad ingenjörskonst dold i ett stilrent och tidlöst paket. Mizuno Pro är järnklubbor för så väl proffsgolfare som amatörer som värdesätter mjuk träffkänsla och elegant design.",
+  "Golfklubbor",
+  "..assets/products/Pro_Fli_Hi.jpg" // har jag tänkt fel här???
+);
+
+let xxxx: Product[] = [headcover1, headcover2, headcover3]; // tänker jag fel här?
+
+/* Golfbollar */
+
+let products: Product[] = [headcover1, headcover2, headcover3, proFliHi];
 
 function createHTMLForProduct(product: Product) {
   let bigContainer: HTMLDivElement = document.getElementById(

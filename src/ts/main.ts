@@ -1,17 +1,17 @@
-var icon = document.getElementById('btn');
+var hamburgericon = document.getElementById('hamburgericonbtn');
 
-icon?.addEventListener('click', function handleClick(event) {
-myFunction();
+hamburgericon?.addEventListener('click', function handleClick(event) {
+hamburgermenu();
 });
 
-function myFunction() {
-    var x:HTMLDivElement = document.getElementById("navmenu") as HTMLDivElement;
-    var icon:HTMLLIElement = document.getElementById('icon') as HTMLLIElement;
-    if (x.style.display === "none") {
-      x.style.display = "flex";
+function hamburgermenu() {
+    var navmenu:HTMLDivElement = document.getElementById("navmenu") as HTMLDivElement;
+    var icon:HTMLLIElement = document.getElementById('hamburgericon') as HTMLLIElement;
+    if (navmenu.style.display === "none") {
+        navmenu.style.display = "flex";
       icon.className="fa-solid fa-x";
     } else {
-      x.style.display = "none";
+        navmenu.style.display = "none";
       icon.className="fa-solid fa-bars";
     }
   }

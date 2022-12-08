@@ -63,12 +63,13 @@ body {
                     width:100%;
                 }
                             
-                a:visited,a:focus,a:active { 
+                a:link,a:visited,a:focus,a:active { 
                     text-decoration: none; 
-                    color:v.$primarycolor;
+                    color:v.$secondarycolor;
                 }
+               
                 ul{
-                    background-color: rgb(209, 214, 211, 0.75);
+                    background-color: rgb(105, 165, 123, 0.5);
                     width:100%;
                     flex-direction: column;
                     list-style-type:none;
@@ -86,8 +87,10 @@ body {
 
                 li{
                     display: flex;
-
-                    color:v.$primarycolor;
+                    color:v.$secondarycolor;
+                }
+                li:hover{
+                    text-decoration-line: underline;
                 }
                 }
             }

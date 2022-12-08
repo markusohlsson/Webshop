@@ -1,5 +1,5 @@
 @use "variables" as v;
-
+@use "mixins" as m;
 body {
     margin:0;
     height:100vh;
@@ -8,11 +8,15 @@ body {
     position: relative;
     .welcome__page{
         .welcome__page__navigation{
-            position:fixed;
+            position:static;
             display:flex;
             height:100px;
             background-color: #2a652c;
             width:100%;
+                @include m.desktop{
+                height:100px;
+                }
+            }
             .welcome__page__navigation__title{
                 width:100%;
                 display: flex;
@@ -29,8 +33,65 @@ body {
                 align-items: center;
                 margin:0;
             }
+            .welcome__page__navigation__icon__hamburger{
+                color:v.$secondarycolor;  
+                display: flex;
+                justify-content: space-around;
+                width:25%;
+                align-items: center;
+                margin:0;
+                @include m.desktop{
+                    opacity:0;
+                }
+            }
+
+            .navigationlinks{
+                height:50px;
+                flex-direction: row;
+                flex-wrap: wrap;
+                display: none;
+                position:absolute;
+                width:100%;
+                @include m.desktop {
+                    display:flex;
+                    height:50px;
+
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    display: flex;
+                    position:absolute;
+                    width:100%;
+                }
+                            
+                a:visited,a:focus,a:active { 
+                    text-decoration: none; 
+                    color:v.$primarycolor;
+                }
+                ul{
+                    background-color: rgb(209, 214, 211, 0.75);
+                    width:100%;
+                    flex-direction: column;
+                    list-style-type:none;
+                    margin:0;
+                    padding:10px;
+                    display: flex;
+                    gap:10px;
+                    justify-content: space-evenly;
+                    align-items: center;
+                    @include m.desktop {
+                        flex-direction: row;
+                        gap:5px;
+                        padding:0px;
+                    }
+
+                li{
+                    display: flex;
+
+                    color:v.$primarycolor;
+                }
+                }
+            }
         }
-    }
     .startpage {
         margin:0;
         height:100%;

@@ -7,3 +7,26 @@
             @content;
         }     
     }
+
+/* Produkterna */
+
+@mixin image($background-image: url("../assets/Golfcourse_image.jpg")){
+
+#imageContainer {
+        height: 400px;
+        width: 400px;
+        display: flex;
+        justify-content: center;
+
+        .img {
+            background-image: $background-image;
+            background-position: center; 
+            background-size: contain;
+            height: 250px;
+            width: 250px;
+            border-radius: 50%;
+            box-shadow: 0 0 1rem 1rem rgba(211, 211, 211, 0.667);
+        }
+
+    }
+}

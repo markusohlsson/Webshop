@@ -1,0 +1,42 @@
+@use "mixins" as m;
+
+#productsContainer {
+    display:flex;
+    flex-direction: column;
+
+#headcover1 {
+    @include m.image(url("../assets/products/Headcover_1.jpg"));
+}
+
+#headcover2 {
+    @include m.image(url("../assets/products/Headcover_2.jpg"));
+}
+
+#headcover3 {
+    @include m.image(url("../assets/products/Headcover_3.jpg"));
+}
+
+#proFliHi {
+    @include m.image(url("../assets/products/Pro_Fli_Hi.jpg"));
+}
+
+#stealthUDI {
+    @include m.image(url("../assets/products/Stealth_UDI.png"));
+}
+
+#u510 {
+    @include m.image(url("../assets/products/U510.jpg"));
+}
+
+#tp5Pop {
+    @include m.image(url("../assets/products/TP5_PIX_ROCKET_POP.jpg"));
+}
+
+#tp5Sushi {
+    @include m.image(url("../assets/products/TP5_PIX_SUSHI.jpg"));
+}
+
+#tp5Spider {
+    @include m.image(url("../assets/products/TP5_PIX_SPIDER.jpg"));
+}
+}

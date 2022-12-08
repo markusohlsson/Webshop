@@ -44,7 +44,7 @@ let xxxx: Product[] = [headcover1, headcover2, headcover3]; // tänker jag fel h
 
 let products: Product[] = [headcover1, headcover2, headcover3, proFliHi];
 
-function createHTMLForProduct(product: Product) {
+export function createHTMLForProduct(product: Product) {
   let bigContainer: HTMLDivElement = document.getElementById(
     "productContainer"
   ) as HTMLDivElement;

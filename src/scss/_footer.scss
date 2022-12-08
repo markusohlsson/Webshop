@@ -7,6 +7,10 @@ footer {
   
     background-color: v.$sixthcolor; 
 
+    @include m.desktop {
+
+    }
+
     ul {
         display: flex;
         flex-direction: column;
@@ -16,12 +20,22 @@ footer {
         margin: 0px;
         margin-top: 20px;
 
-        li {
-            margin: 5px;
-        }
-
         @include m.desktop {
             flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin: 0px;
+        }
+
+        li {
+            margin: 5px;
+
+            @include m.desktop {
+                margin: 0px;
+                display: flex;
+                padding: 20px;
+                padding-bottom: 10px;
+            }
         }
     }
 
@@ -29,6 +43,10 @@ footer {
         display: flex;
         flex-direction: row;
         justify-content: center;
+
+        @include m.desktop {
+    
+        }
 
         a {
             i {
@@ -38,10 +56,6 @@ footer {
                 font-size: 26px;
             }
         }
-    }
-
-    @include m.desktop {
-
     }
 }
 

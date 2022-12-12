@@ -36,7 +36,7 @@ let headcovers: Product[] = [headcover1, headcover2, headcover3]; // tänker jag
 let proFliHi: Product = new Product(
   "Pro Fli Hi",
   "2799",
-  "Mizuno Pro har alltid varit Mizunos mest innovationsinriktade serie med avancerad ingenjörskonst dold i ett stilrent och tidlöst paket. Mizuno Pro är järnklubbor för så väl proffsgolfare som amatörer som värdesätter mjuk träffkänsla och elegant design.",
+  "Mizuno Pro har alltid varit Mizunos mest innovationsinriktade serie med avancerad ingenjörskonst dold i ett stilrent och tidlöst paket.",
   "Golfklubbor",
   "../assets/products/Pro_Fli_Hi.jpg",
   "proFliHi"
@@ -60,7 +60,7 @@ let u510: Product = new Product(
   "u510"
 );
 
-let xxxx: Product[] = [proFliHi, stealthUDI, u510]; // tänker jag fel här?
+let clubs: Product[] = [proFliHi, stealthUDI, u510]; // tänker jag fel här?
 
 /* Golfbollar */
 
@@ -97,7 +97,7 @@ let tp5Spider: Product = new Product(
   "tp5Spider"
 );
 
-let xxxxxx: Product[] = [tp5Pop, tp5Sushi, tp5Spider]; // tänker jag fel här?
+let balls: Product[] = [tp5Pop, tp5Sushi, tp5Spider]; // tänker jag fel här?
 
 /* ... */
 
@@ -113,12 +113,12 @@ let productList: Product[] = [
   tp5Spider,
 ];
 
-function createHTMLForProduct(productList: Product[]) {
+function createHTMLForProduct(products: Product[]) {
   let bigContainer: HTMLDivElement = document.getElementById(
     "productsContainer"
   ) as HTMLDivElement;
 
-  for (let i: number = 0; i < productList.length; i++) {
+  for (let i: number = 0; i < products.length; i++) {
     let productDiv: HTMLDivElement = document.createElement("div");
     let productContainer: HTMLDivElement = document.createElement("div");
     let title: HTMLHeadingElement = document.createElement("h3");
@@ -128,16 +128,16 @@ function createHTMLForProduct(productList: Product[]) {
     let description: HTMLParagraphElement = document.createElement("p");
 
     productDiv.className = "product";
-    productContainer.className = "product" + "__" + productList[i].id;
+    productContainer.className = "product" + "__" + products[i].id;
     title.className = "product__title";
     imageContainer.className = "product__imageContainer";
     image.className = "product__imageContainer__img";
     price.className = "product__price";
     description.className = "product__description";
 
-    title.innerHTML = productList[i].title;
-    price.innerHTML = productList[i].price; // måste göra om till number sen
-    description.innerHTML = productList[i].description;
+    title.innerHTML = products[i].title;
+    price.innerHTML = products[i].price + " " + "kr"; // måste göra om till number sen
+    description.innerHTML = products[i].description;
 
     productContainer.appendChild(title);
     productContainer.appendChild(imageContainer);
@@ -151,3 +151,7 @@ function createHTMLForProduct(productList: Product[]) {
 }
 
 createHTMLForProduct(productList);
+
+createHTMLForProduct(headcovers);
+createHTMLForProduct(clubs);
+createHTMLForProduct(balls);

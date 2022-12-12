@@ -14,9 +14,10 @@
     .product { 
 
         &__title {
-            font-size: 24px;
+            font-size: 20px;
             text-align: center;
             margin: 0px;
+            margin-bottom: 5px;
         }
         
         &__imageContainer {
@@ -27,16 +28,16 @@
                 background-image: $background-image;
                 background-position: center; 
                 background-size: contain;
-                height: 230px;
-                width: 230px;
+                height: 250px;
+                width: 250px;
             }
-
         }
 
         &__price {
-            font-size: 24px;
+            font-size: 20px;
             text-align: center;
             margin: 0px;
+            margin-top: 5px;
         }
     }
 }

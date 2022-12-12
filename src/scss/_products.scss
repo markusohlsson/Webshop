@@ -3,40 +3,58 @@
 #productsContainer {
     display:flex;
     flex-direction: column;
+    align-items: center;
+    padding: 10px;
 
-#headcover1 {
-    @include m.image(url("../assets/products/Headcover_1.jpg"));
-}
+    .product {
+        height: 300px;
+        width: 300px; 
+        border: 1px solid gray;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        margin-top: 10px;
 
-#headcover2 {
-    @include m.image(url("../assets/products/Headcover_2.jpg"));
-}
+        &__headcover1 {
+            @include m.product(url("../assets/products/Headcover_1.jpg"));
+        }
 
-#headcover3 {
-    @include m.image(url("../assets/products/Headcover_3.jpg"));
-}
+        &__headcover2 {
+            @include m.product(url("../assets/products/Headcover_2.jpg"));
+        }
 
-#proFliHi {
-    @include m.image(url("../assets/products/Pro_Fli_Hi.jpg"));
-}
+        &__headcover3 {
+            @include m.product(url("../assets/products/Headcover_3.jpg"));
+        }
 
-#stealthUDI {
-    @include m.image(url("../assets/products/Stealth_UDI.png"));
-}
+        &__proFliHi {
+            @include m.product(url("../assets/products/Pro_Fli_Hi.jpg"));
+        }
 
-#u510 {
-    @include m.image(url("../assets/products/U510.jpg"));
-}
+        &__stealthUDI {
+            @include m.product(url("../assets/products/Stealth_UDI.png"));
+        }
 
-#tp5Pop {
-    @include m.image(url("../assets/products/TP5_PIX_ROCKET_POP.jpg"));
-}
+        &__u510 {
+            @include m.product(url("../assets/products/U510.jpg"));
+        }
 
-#tp5Sushi {
-    @include m.image(url("../assets/products/TP5_PIX_SUSHI.jpg"));
-}
+        &__tp5Pop {
+            @include m.product(url("../assets/products/TP5_PIX_ROCKET_POP.jpg"));
+        }
 
-#tp5Spider {
-    @include m.image(url("../assets/products/TP5_PIX_SPIDER.jpg"));
-}
+        &__tp5Sushi {
+            @include m.product(url("../assets/products/TP5_PIX_SUSHI.jpg"));
+        }
+
+        &__tp5Spider {
+            @include m.product(url("../assets/products/TP5_PIX_SPIDER.jpg"));
+        }
+
+        &__description {
+            display: none;
+        }
+    }
+
 }

@@ -7,3 +7,37 @@
             @content;
         }     
     }
+
+/* Produkterna */
+
+@mixin product($background-image: url("../assets/Golfcourse_image.jpg")){
+    .product { 
+
+        &__title {
+            font-size: 20px;
+            text-align: center;
+            margin: 0px;
+            margin-bottom: 5px;
+        }
+        
+        &__imageContainer {
+        display: flex;
+        justify-content: center;
+
+            &__img {
+                background-image: $background-image;
+                background-position: center; 
+                background-size: contain;
+                height: 250px;
+                width: 250px;
+            }
+        }
+
+        &__price {
+            font-size: 20px;
+            text-align: center;
+            margin: 0px;
+            margin-top: 5px;
+        }
+    }
+}

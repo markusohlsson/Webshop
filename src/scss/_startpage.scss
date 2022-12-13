@@ -7,6 +7,8 @@ body {
     scroll-behavior: smooth;
     position: relative;
     .welcome__page{
+        position:fixed;
+        width:100%;
         .welcome__page__navigation{
             position:static;
             display:flex;
@@ -124,5 +126,79 @@ body {
         color:v.$secondarycolor;
     }
    }
+}
+
+#aboutUsContainer{
+    display:none;
+    position: fixed;
+    top: 100px;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    flex-direction: column;
+    text-align: center;
+    h3{
+        width:100%;
+    }
+    i{
+        position: absolute;
+        top:10px;
+        right:10px;
+        font-size:35px;
+    }
+}
+#about:hover{
+    text-decoration: underline;
+    cursor:pointer;
+}
+
+#contactUsContainer{
+    display:none;
+    position: fixed;
+    top: 100px;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    flex-direction: column;
+    text-align: center;
+    h3{
+        width:100%;
+    }
+    i{
+        position: absolute;
+        top:10px;
+        right:10px;
+        font-size:35px;
+    }
+    form{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        gap:10px;
+        input{
+            text-align: center;
+            height: 25px;
+            width:80%;
+        }
+        textarea{
+            text-align: center;
+            height:250px;
+            width:80%;
+        }
+        button {
+            // margin:10px;
+            border:1px solid grey;
+            background-color: v.$seventhcolor;
+            height:50px;
+            width:250px;
+        }
+        button:hover{
+            background-color: v.$fifthcolor;
+        }
+        }
+}
+#contact:hover{
+    text-decoration: underline;
+    cursor:pointer;
 }
 }

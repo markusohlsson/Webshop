@@ -113,6 +113,8 @@ let productPageContainer: HTMLDivElement = document.getElementById(
   "productPageContainer"
 ) as HTMLDivElement;
 
+let container: HTMLDivElement = document.createElement("div");
+
 export function createHTMLForProduct(products: Product[]) {
   let bigContainer: HTMLDivElement = document.getElementById(
     "productsContainer"
@@ -155,19 +157,20 @@ export function createHTMLForProduct(products: Product[]) {
 
     productDiv.addEventListener("click", () => {
       productPageContainer.className = "on";
-      productPageContainer.appendChild(productDiv);
+      container.appendChild(productDiv);
+      productPageContainer.appendChild(container);
     });
   }
 }
 
-let xxxx: HTMLElement = document.getElementById("xxxx") as HTMLElement; // <-mer secifik //
+let xxxx: Element = document.getElementById("xxxx") as HTMLElement; // <-mer secifik //
 
 xxxx.addEventListener("click", () => {
   productPageContainer.className = "off";
+  container.innerHTML = "";
 });
 
 // PRODUKTSIDA ENSKILD //
-
 // fixa med diven //
 // addEventListener //
 // i diven kommer nu html för produkten att skapas //

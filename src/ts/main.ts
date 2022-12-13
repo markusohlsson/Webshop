@@ -17,7 +17,7 @@ createHTMLForProduct(balls);
 // Hamburger Menu //
 let hamburgericon = document.getElementById("hamburgericonbtn");
 
-hamburgericon?.addEventListener("click", function handleClick(event) {
+hamburgericon?.addEventListener("click", function(event) {
   hamburgermenu();
 });
 
@@ -54,14 +54,14 @@ function aboutus(){
 
   container.style.display="flex";
   icon.className="fa-solid fa-x";
-  icon.addEventListener ("click", function handleClick(event){
+  icon.addEventListener ("click", function (event){
     container.style.display="none";
     container.innerHTML="";
   }
 }
 
 let about = document.getElementById("about");
-about?.addEventListener("click", function handleClick(event) {
+about?.addEventListener("click", function (event) {
   aboutus();
 });
 
@@ -72,6 +72,7 @@ function contactus(){
   let title:HTMLHeadingElement = document.createElement("h3") as HTMLHeadingElement;
   let icon:HTMLElement = document.createElement("i") as HTMLElement;
   let form:HTMLFormElement = document.createElement("form") as HTMLFormElement;
+  let sentMessage:HTMLParagraphElement = document.createElement("p") as HTMLParagraphElement;
 
   // Firstname 
   let labelforFirstname:HTMLLabelElement = document.createElement("label") as HTMLLabelElement;
@@ -150,18 +151,22 @@ function contactus(){
   form.addEventListener("submit", function(event){
     event.preventDefault();
     console.log("Du har skickat ett meddelande till oss!");
+    form.innerHTML="";
+      
+    sentMessage.innerHTML="Ditt meddelande har skickats!";
+    container.appendChild(sentMessage);
   });
 
   container.style.display="flex";
   icon.className="fa-solid fa-x";
-  icon.addEventListener ("click", function handleClick(event){
+  icon.addEventListener ("click", function(event){
     container.style.display="none";
     container.innerHTML="";
   }
 }
 
 let contact = document.getElementById("contact");
-contact?.addEventListener("click", function handleClick(event) {
+contact?.addEventListener("click", function(event) {
   contactus();
 });
 

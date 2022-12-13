@@ -109,6 +109,10 @@ export let productList: Product[] = [
 
 /* Funktioner */
 
+let productPageContainer: HTMLDivElement = document.getElementById(
+  "productPageContainer"
+) as HTMLDivElement;
+
 export function createHTMLForProduct(products: Product[]) {
   let bigContainer: HTMLDivElement = document.getElementById(
     "productsContainer"
@@ -146,5 +150,28 @@ export function createHTMLForProduct(products: Product[]) {
 
     productDiv.appendChild(productContainer);
     bigContainer.appendChild(productDiv);
+
+    // testar att lägga in här //
+
+    productDiv.addEventListener("click", () => {
+      productPageContainer.className = "on";
+      productPageContainer.appendChild(productDiv);
+    });
   }
 }
+
+let xxxx: HTMLElement = document.getElementById("xxxx") as HTMLElement; // <-mer secifik //
+
+xxxx.addEventListener("click", () => {
+  productPageContainer.className = "off";
+});
+
+// PRODUKTSIDA ENSKILD //
+
+// fixa med diven //
+// addEventListener //
+// i diven kommer nu html för produkten att skapas //
+// ändring av klass (scss) //
+// knappen - varukorg //
+// krysset för att stänga //
+// vanliga klasser igen //

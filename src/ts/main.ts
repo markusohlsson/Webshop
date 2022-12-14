@@ -66,7 +66,7 @@ about?.addEventListener("click", function (event) {
 });
 
 
-// About us //
+// Contact us //
 function contactus(){
   let container:HTMLDivElement = document.getElementById("contactUsContainer") as HTMLDivElement;
   let title:HTMLHeadingElement = document.createElement("h3") as HTMLHeadingElement;

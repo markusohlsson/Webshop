@@ -2,6 +2,7 @@
 let container:HTMLDivElement = document.getElementById("checkoutContainer") as HTMLDivElement;
 let title:HTMLHeadingElement = document.createElement("h3") as HTMLHeadingElement;
 let icon:HTMLElement = document.createElement("i") as HTMLElement;
+let formContainer:HTMLDivElement = document.createElement("div") as HTMLDivElement;
 let form:HTMLFormElement = document.createElement("form") as HTMLFormElement;
 
 title.innerHTML="Kassa";
@@ -12,9 +13,9 @@ export function Checkout(){
 
     container.appendChild(title);
     container.appendChild(icon);
-    
+    container.appendChild(formContainer);
     // Formulär
-container.appendChild(form);
+formContainer.appendChild(form);
 form.appendChild(labelforFirstname);
 form.appendChild(inputforFirstname);
 form.appendChild(labelforLastname);
@@ -29,7 +30,15 @@ form.appendChild(labelForPostCode);
 form.appendChild(inputForPostCode);
 form.appendChild(labelForPostAddress);
 form.appendChild(inputForPostAddress);
+form.appendChild(labelForDeliverySection);
+form.appendChild(inputForDeliveryOne);
+form.appendChild(inputForDeliveryTwo);
+form.appendChild(inputForDeliveryThree);
+form.appendChild(labelForPaymentSection);
+form.appendChild(inputForPaymentOne);
+form.appendChild(inputForPaymentTwo);
 form.appendChild(button);
+
 
 
     container.style.display="flex";
@@ -61,6 +70,18 @@ let inputForPostCode:HTMLInputElement = document.createElement("input") as HTMLI
 // Post Address
 let labelForPostAddress:HTMLLabelElement = document.createElement("label") as HTMLLabelElement;
 let inputForPostAddress:HTMLInputElement = document.createElement("input") as HTMLInputElement;
+
+// Delivery 
+let labelForDeliverySection:HTMLLabelElement = document.createElement("label") as HTMLLabelElement;
+let inputForDeliveryOne:HTMLInputElement = document.createElement("input") as HTMLInputElement;
+let inputForDeliveryTwo:HTMLInputElement = document.createElement("input") as HTMLInputElement;
+let inputForDeliveryThree:HTMLInputElement = document.createElement("input") as HTMLInputElement;
+
+// Payment
+let labelForPaymentSection:HTMLLabelElement = document.createElement("label") as HTMLLabelElement;
+let inputForPaymentOne:HTMLInputElement = document.createElement("input") as HTMLInputElement;
+let inputForPaymentTwo:HTMLInputElement = document.createElement("input") as HTMLInputElement;
+
  // Send
 let button:HTMLButtonElement = document.createElement("button") as HTMLButtonElement;
 
@@ -128,9 +149,38 @@ let button:HTMLButtonElement = document.createElement("button") as HTMLButtonEle
   inputForPostAddress.required=true;
   inputForPostAddress.placeholder="Stockholm";
 
+  // Delivery
+  labelForDeliverySection.innerHTML="Leveransmetod";
+  labelForDeliverySection.htmlFor="delivery";
 
-    // Send 
-    button.innerHTML="Slutför Köp";
-    button.type="submit";
+  // Delivery 1
+  inputForDeliveryOne.type="radio";
+  inputForDeliveryOne.name="delivery";
+  inputForDeliveryOne.id="deliveryOne";
+  // Delivery 2
+  inputForDeliveryTwo.type="radio";
+  inputForDeliveryTwo.name="delivery";
+  inputForDeliveryTwo.id="deliveryTwo";
+  // Delivery 3
+  inputForDeliveryThree.type="radio";
+  inputForDeliveryThree.name="delivery";
+  inputForDeliveryThree.id="deliveryThree";
+
+    // Payment
+    labelForPaymentSection.innerHTML="Betalningsmetod";
+    labelForPaymentSection.htmlFor="payment";
+  
+    // Payment 1
+    inputForPaymentOne.type="radio";
+    inputForPaymentOne.name="payment";
+    inputForPaymentOne.id="paymentOne";
+    // Payment 2
+    inputForPaymentTwo.type="radio";
+    inputForPaymentTwo.name="payment";
+    inputForPaymentTwo.id="paymentTwo";
+
+  // Send 
+  button.innerHTML="Slutför Köp";
+  button.type="submit";
 
 

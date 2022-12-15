@@ -1,5 +1,10 @@
 // import { Product } from "./models/Product";
 
+import { aboutus } from "./services/aboutService";
+import { contactus } from "./services/contactService";
+import { hamburgermenu, hamburgericon} from "./services/headerService";
+
+
 import {
   balls,
   clubs,
@@ -14,21 +19,21 @@ createHTMLForProduct(headcovers);
 createHTMLForProduct(clubs);
 createHTMLForProduct(balls);
 
-// Hamburger Menu //
-let hamburgericon = document.getElementById('hamburgericonbtn');
 
-hamburgericon?.addEventListener('click', function handleClick(event) {
-hamburgermenu();
-});
+hamburgericon?.addEventListener("click", function(event) {
+  hamburgermenu();
+}); 
 
-function hamburgermenu() {
-  let navmenu:HTMLDivElement = document.getElementById("navmenu") as HTMLDivElement;
-  let icon:HTMLLIElement = document.getElementById('hamburgericon') as HTMLLIElement;
-    if (navmenu.style.display === "none") {
-        navmenu.style.display = "flex";
-      icon.className="fa-solid fa-x";
-    } else {
-        navmenu.style.display = "none";
-      icon.className="fa-solid fa-bars";
-    }
-  }
+
+//About
+let about = document.getElementById("about");
+  about?.addEventListener("click", function (event) {
+    aboutus();
+  });
+  
+
+  // Contact 
+  let contact = document.getElementById("contact");
+  contact?.addEventListener("click", function(event) {
+    contactus();
+  });

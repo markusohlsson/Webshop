@@ -109,6 +109,12 @@ export let productList: Product[] = [
 
 /* Funktioner */
 
+let productPageContainer: HTMLDivElement = document.getElementById(
+  "productPageContainer"
+) as HTMLDivElement;
+
+let container: HTMLDivElement = document.createElement("div");
+
 export function createHTMLForProduct(products: Product[]) {
   let bigContainer: HTMLDivElement = document.getElementById(
     "productsContainer"
@@ -122,6 +128,7 @@ export function createHTMLForProduct(products: Product[]) {
     let image: HTMLImageElement = document.createElement("img");
     let price: HTMLParagraphElement = document.createElement("p");
     let description: HTMLParagraphElement = document.createElement("p");
+    let addToCartButton: HTMLButtonElement = document.createElement("button");
 
     productDiv.className = "product";
     productContainer.className = "product" + "__" + products[i].id;
@@ -134,14 +141,40 @@ export function createHTMLForProduct(products: Product[]) {
     title.innerHTML = products[i].title;
     price.innerHTML = products[i].price + " " + "kr"; // måste göra om till number sen
     description.innerHTML = products[i].description;
+    addToCartButton.innerHTML = "Lägg i varukorg";
 
     productContainer.appendChild(title);
     productContainer.appendChild(imageContainer);
     imageContainer.appendChild(image);
     productContainer.appendChild(price);
     productContainer.appendChild(description);
+    productContainer.appendChild(addToCartButton);
 
     productDiv.appendChild(productContainer);
     bigContainer.appendChild(productDiv);
+
+    // testar att lägga in här //
+
+    productDiv.addEventListener("click", () => {
+      productPageContainer.className = "on";
+      container.appendChild(productDiv);
+      productPageContainer.appendChild(container);
+    });
   }
 }
+
+let xxxx: Element = document.getElementById("xxxx") as HTMLElement; // <-mer secifik //
+
+xxxx.addEventListener("click", () => {
+  productPageContainer.className = "off";
+  container.innerHTML = "";
+});
+
+// PRODUKTSIDA ENSKILD //
+// fixa med diven //
+// addEventListener //
+// i diven kommer nu html för produkten att skapas //
+// ändring av klass (scss) //
+// knappen - varukorg //
+// krysset för att stänga //
+// vanliga klasser igen //

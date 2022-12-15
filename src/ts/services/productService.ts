@@ -129,6 +129,7 @@ export function createHTMLForProduct(products: Product[]) {
     let price: HTMLParagraphElement = document.createElement("p");
     let description: HTMLParagraphElement = document.createElement("p");
     let addToCartButton: HTMLButtonElement = document.createElement("button");
+    let amountInput: HTMLInputElement = document.createElement("input");
 
     productDiv.className = "product";
     productContainer.className = "product" + "__" + products[i].id;
@@ -137,6 +138,8 @@ export function createHTMLForProduct(products: Product[]) {
     image.className = "product__imageContainer__img";
     price.className = "product__price";
     description.className = "product__description";
+    amountInput.type = "number";
+    // let amount:number = amountInput.valueAsNumber;
 
     title.innerHTML = products[i].title;
     price.innerHTML = products[i].price + " " + "kr"; // måste göra om till number sen
@@ -146,8 +149,9 @@ export function createHTMLForProduct(products: Product[]) {
     productContainer.appendChild(title);
     productContainer.appendChild(imageContainer);
     imageContainer.appendChild(image);
-    productContainer.appendChild(price);
     productContainer.appendChild(description);
+    productContainer.appendChild(price);
+    productContainer.appendChild(amountInput);
     productContainer.appendChild(addToCartButton);
 
     productDiv.appendChild(productContainer);

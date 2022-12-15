@@ -50,6 +50,10 @@ body {
                     opacity:0;
                 }
             }
+            .welcome__page__navigation__icon__hamburger:hover{
+                color:v.$sixthcolor;
+                cursor:pointer;
+            }
 
             .navigationlinks{
                 height:50px;

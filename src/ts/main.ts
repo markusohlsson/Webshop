@@ -9,6 +9,7 @@ import {
   headcovers,
   productList,
 } from "./services/productService";
+import { shoppingCart } from "./services/shoppingCartService";
 
 createHTMLForProduct(productList);
 
@@ -33,3 +34,8 @@ let contact = document.getElementById("contact");
 contact?.addEventListener("click", function (event) {
   contactus();
 });
+
+let cart = document.getElementById("cart");
+cart?.addEventListener("click", function(event){
+  shoppingCart();
+}

@@ -5,8 +5,11 @@ let icon:HTMLElement = document.createElement("i") as HTMLElement;
 let formContainer:HTMLDivElement = document.createElement("div") as HTMLDivElement;
 let form:HTMLFormElement = document.createElement("form") as HTMLFormElement;
 
+
 title.innerHTML="Kassa";
 icon.className="fa-solid fa-x";
+
+
 
 
 export function Checkout(){
@@ -46,7 +49,10 @@ form.appendChild(button);
       container.style.display="none";
       container.innerHTML="";
     });
+    
   }
+
+
   
 
  // Firstname 
@@ -184,3 +190,18 @@ let button:HTMLButtonElement = document.createElement("button") as HTMLButtonEle
   button.type="submit";
 
 
+  // Tack för ditt köp Test
+  let testp:HTMLParagraphElement = document.createElement("p") as HTMLParagraphElement;
+  let x = inputforFirstname.value;
+  testp.innerHTML="Tack för ditt köp" + x;
+ 
+  //
+
+  form.addEventListener("submit",function(event){
+    event.preventDefault();
+    form.innerHTML="";
+    container.appendChild(testp);
+    
+        
+
+  })

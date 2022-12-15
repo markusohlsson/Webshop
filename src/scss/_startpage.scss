@@ -61,10 +61,8 @@ body {
                 @include m.desktop {
                     display:flex;
                     height:50px;
-
                     flex-direction: row;
                     flex-wrap: wrap;
-                    display: flex;
                     position:absolute;
                     width:100%;
                 }

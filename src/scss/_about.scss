@@ -1,7 +1,7 @@
 @use "variables" as v;
 @use "mixins" as m;
+
 #aboutUsContainer{
-    display:none;
     position: fixed;
     top: 100px;
     width: 100%;
@@ -10,6 +10,8 @@
     flex-direction: column;
     text-align: center;
     align-items: center;
+    display: none;
+
     h3{
         width:100%;
     }
@@ -23,8 +25,9 @@
         width:85%;
 
     }
-    #about:hover{
-        text-decoration: underline;
-        cursor:pointer;
-    }
+
+}
+#about:hover{
+    text-decoration: underline;
+    cursor:pointer;
 }

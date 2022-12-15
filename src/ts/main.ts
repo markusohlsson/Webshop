@@ -1,5 +1,3 @@
-// import { Product } from "./models/Product";
-
 import {
   balls,
   clubs,
@@ -9,6 +7,8 @@ import {
 } from "./services/productService";
 
 createHTMLForProduct(productList);
+
+// fixa iordning med addevent (till kategorierna) //
 
 createHTMLForProduct(headcovers);
 createHTMLForProduct(clubs);

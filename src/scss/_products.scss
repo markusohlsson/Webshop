@@ -1,4 +1,5 @@
 @use "mixins" as m;
+@use "variables" as v;
 
 #productsContainer {
     display:flex;
@@ -67,6 +68,14 @@
         &__description {
             display: none;
         }
+
+        input {
+            display: none;
+        }
+
+        button {
+            display: none;
+        }
     }
 
     .off {
@@ -81,12 +90,109 @@
         background-color: white;
 
             @include m.desktop {
-            top: 150px;
-            width: 90%;
-            height: 80vh;
+            // top: 150px; 
             }
+        
+        // .fa-brands {
+        //     font-size: large; // ändra denna till rätt sen //
+        // }
+    
+        .product {
+            width: 100%;
+            border: none;
+            padding: 0px;
+            background-color: white;
+            margin-top: 20px; 
+            display: flex;
+
+            @include m.desktop {
+            }
+
+            &__title {
+                font-size: 20px;
+                text-align: center;
+                margin: 0px;
+                margin-bottom: 5px;
+
+                @include m.desktop {
+                    text-align: left;
+                }
+            }
+
+            &__imageContainer {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+
+                @include m.desktop {
+                    justify-content: left;
+                }
+                
+                    &__img {
+                        background-position: center; 
+                        background-size: contain;
+                        width: 300px;
+                        height: 300px;
+
+                        @include m.desktop {
+                            width: 450px;
+                            height: 450px;
+                        }
+
+                    }
+            }
+
+            &__description {
+                display: flex;
+                margin: 10px;
+
+                @include m.desktop {
+                    margin: 0; 
+                    width: 600px;
+                }
+            }
+
+            &__price {
+                    font-size: 20px;
+                    text-align: center;
+                    margin: 0px;
+                    margin-top: 5px;
+
+                    @include m.desktop {
+                        text-align: right;
+                    }
+            }
+
+            input {
+                display: flex;
+
+                @include m.desktop {
+                }
+            }
+    
+            button {
+                display: inline;
+                position: fixed;
+                bottom: 0px;
+                height: 75px;
+                width: 100%;
+                margin: 0;
+                background-color: v.$fifthcolor;
+                
+                @include m.desktop {
+                    height: 100px; 
+                    width: 350px;
+                    position: relative;               
+                }
+            }
+        }
+
     }
 }
+
+
+
+
 
 
 

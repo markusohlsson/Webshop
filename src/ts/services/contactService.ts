@@ -94,6 +94,6 @@ export function contactus(){
     icon.addEventListener ("click", function(event){
       container.style.display="none";
       container.innerHTML="";
-    }
+    });
   }
   

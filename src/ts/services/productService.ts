@@ -131,6 +131,9 @@ export function createHTMLForProduct(products: Product[]) {
     let addToCartButton: HTMLButtonElement = document.createElement("button");
     let amountInput: HTMLInputElement = document.createElement("input");
 
+    let readMoreButton: HTMLButtonElement = document.createElement("button");
+    let a: HTMLAnchorElement = document.createElement("a");
+
     productDiv.className = "product";
     productContainer.className = "product" + "__" + products[i].id;
     title.className = "product__title";
@@ -139,12 +142,17 @@ export function createHTMLForProduct(products: Product[]) {
     price.className = "product__price";
     description.className = "product__description";
     amountInput.type = "number";
+
+    readMoreButton.id = "buttonMore";
     // let amount:number = amountInput.valueAsNumber;
+
+    a.href = "/pages/productpage.html";
 
     title.innerHTML = products[i].title;
     price.innerHTML = products[i].price + " " + "kr"; // måste göra om till number sen
     description.innerHTML = products[i].description;
     addToCartButton.innerHTML = "Lägg i varukorg";
+    readMoreButton.innerHTML = "Läs mer...";
 
     productContainer.appendChild(title);
     productContainer.appendChild(imageContainer);
@@ -153,20 +161,43 @@ export function createHTMLForProduct(products: Product[]) {
     productContainer.appendChild(price);
     productContainer.appendChild(amountInput);
     productContainer.appendChild(addToCartButton);
+    a.appendChild(readMoreButton);
+    productContainer.appendChild(a);
 
     productDiv.appendChild(productContainer);
     bigContainer.appendChild(productDiv);
 
-    // förklaringar??? //
+    // klicka för att komma till produktsidan //
 
     productDiv.addEventListener("click", () => {
       // här ska vi länkas över till en ny sida //
-      productPageContainer.className = "on";
-      container.appendChild(productDiv);
-      productPageContainer.appendChild(container);
+      //   productPageContainer.className = "on";
+      //   container.appendChild(productDiv);
+      //   productPageContainer.appendChild(container);
     });
+
+    readMoreButton.addEventListener("click", () => {
+      // här är jag!!//
+    });
+
+    // // Create the text node for anchor element.
+    // var link = document.createTextNode("This is link");
+
+    // // Append the text node to anchor element.
+    // a.appendChild(link);
+
+    // // Set the title.
+    // a.title = "This is Link";
+
+    // // Set the href property.
+    // a.href = "https://www.geeksforgeeks.org";
+
+    // // Append the anchor element to the body.
+    // document.body.appendChild(a);
   }
 }
+
+// här borde vi med andra ord vara på produktsidan //
 
 let xxxx: Element = document.getElementById("xxxx") as HTMLElement;
 

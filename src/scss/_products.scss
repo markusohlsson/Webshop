@@ -90,6 +90,10 @@
         button {
             display: none;
         }
+
+        #buttonMore {
+            display: flex;
+        } 
     }
 
     .product:hover {

@@ -115,12 +115,11 @@ let productPageContainer: HTMLDivElement = document.getElementById(
 
 let container: HTMLDivElement = document.createElement("div");
 
-export function createHTMLForProduct(products: Product[]) {
-  let bigContainer: HTMLDivElement = document.getElementById(
-    "productsContainer"
-  ) as HTMLDivElement;
+let bigContainer: HTMLDivElement = document.getElementById(
+  "productsContainer"
+) as HTMLDivElement;
 
-  // bigContainer.innerHTML = "";
+export function createHTMLForProduct(products: Product[]) {
   for (let i: number = 0; i < products.length; i++) {
     let productDiv: HTMLDivElement = document.createElement("div");
     let productContainer: HTMLDivElement = document.createElement("div");
@@ -161,6 +160,7 @@ export function createHTMLForProduct(products: Product[]) {
     // förklaringar??? //
 
     productDiv.addEventListener("click", () => {
+      // här ska vi länkas över till en ny sida //
       productPageContainer.className = "on";
       container.appendChild(productDiv);
       productPageContainer.appendChild(container);
@@ -173,7 +173,11 @@ let xxxx: Element = document.getElementById("xxxx") as HTMLElement;
 xxxx.addEventListener("click", () => {
   productPageContainer.className = "off";
   container.innerHTML = "";
-  // createHTMLForProduct(productList);
+  createHTMLForProduct(productList);
 });
 
 // loopa igen efter enskild - alla med??? //
+
+// fixa så att priset syns på den enskilda sidan - ändra inställningarna på knappen //
+
+// flytta över till 4 olika html-filer //

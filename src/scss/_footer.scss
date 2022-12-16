@@ -6,6 +6,7 @@ footer {
     flex-direction: column;
   
     background-color: v.$sixthcolor; 
+    background-color: v.$hfcolor;
 
     @include m.desktop {
 
@@ -29,18 +30,27 @@ footer {
 
         li {
             margin: 5px;
-            border:1px solid black;
+            color: white;
+            // border:1px solid black;
             padding:5px;
-            background-color: v.$seventhcolor;
+            // background-color: v.$seventhcolor;
 
             @include m.desktop {
-                border:0;
+                // border:0;
                 margin: 0px;
                 display: flex;
                 padding: 20px;
                 padding-bottom: 10px;
-                background-color: v.$sixthcolor;
+                // background-color: v.$sixthcolor;
             }
+        }
+
+        li:hover {
+            cursor: pointer;
+            font-size: large;
+            border: none;
+            padding-bottom: 5px;;
+            text-decoration: none;
         }
     }
 
@@ -55,10 +65,16 @@ footer {
 
         a {
             i {
-                color: black;
+                color: white;
                 margin: 0px;
                 padding: 20px;
                 font-size: 26px;
+            }
+
+            i:hover {
+                cursor: pointer;
+                font-size: 30px;
+                padding-bottom: 16px;
             }
         }
     }

@@ -168,10 +168,11 @@
                         height: 300px;
 
                         @include m.desktop {
-                            width: 675px;
-                            height: 675px;
+                            width: 50%;
+                            height: 60vh;
                             position: relative;
                             left: 25px;
+                            background-repeat: no-repeat;
                         }
 
                     }
@@ -198,6 +199,7 @@
                     text-align: center;
                     margin: 0px;
                     margin-top: 5px;
+                    display: block;
                     
                     @include m.desktop {
                         text-align: right;

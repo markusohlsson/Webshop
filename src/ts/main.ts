@@ -16,11 +16,11 @@ createHTMLForProduct(productList);
 
 // fixa iordning med addevent (till kategorierna) //
 
-createHTMLForProduct(headcovers);
-createHTMLForProduct(clubs);
-createHTMLForProduct(balls);
+// createHTMLForProduct(headcovers);
+// createHTMLForProduct(clubs);
+// createHTMLForProduct(balls);
 
-// Hamburger 
+// Hamburger
 
 hamburgericon?.addEventListener("click", function (event) {
   hamburgermenu();
@@ -40,7 +40,6 @@ contact?.addEventListener("click", function (event) {
 
 // Cart
 let cart = document.getElementById("cart");
-cart?.addEventListener("click", function(event){
+cart?.addEventListener("click", function (event) {
   shoppingCart();
 });
-

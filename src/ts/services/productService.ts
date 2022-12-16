@@ -29,7 +29,7 @@ let headcover3: Product = new Product(
   "headcover3"
 );
 
-export let headcovers: Product[] = [headcover1, headcover2, headcover3]; // tänker jag fel här?
+export let headcovers: Product[] = [headcover1, headcover2, headcover3];
 
 /* Golfklubbor */
 
@@ -60,7 +60,7 @@ let u510: Product = new Product(
   "u510"
 );
 
-export let clubs: Product[] = [proFliHi, stealthUDI, u510]; // tänker jag fel här?
+export let clubs: Product[] = [proFliHi, stealthUDI, u510];
 
 /* Golfbollar */
 
@@ -91,7 +91,7 @@ let tp5Spider: Product = new Product(
   "tp5Spider"
 );
 
-export let balls: Product[] = [tp5Pop, tp5Sushi, tp5Spider]; // tänker jag fel här?
+export let balls: Product[] = [tp5Pop, tp5Sushi, tp5Spider];
 
 /* Alla produkter */
 
@@ -120,6 +120,7 @@ export function createHTMLForProduct(products: Product[]) {
     "productsContainer"
   ) as HTMLDivElement;
 
+  // bigContainer.innerHTML = "";
   for (let i: number = 0; i < products.length; i++) {
     let productDiv: HTMLDivElement = document.createElement("div");
     let productContainer: HTMLDivElement = document.createElement("div");
@@ -157,7 +158,7 @@ export function createHTMLForProduct(products: Product[]) {
     productDiv.appendChild(productContainer);
     bigContainer.appendChild(productDiv);
 
-    // testar att lägga in här //
+    // förklaringar??? //
 
     productDiv.addEventListener("click", () => {
       productPageContainer.className = "on";
@@ -167,18 +168,12 @@ export function createHTMLForProduct(products: Product[]) {
   }
 }
 
-let xxxx: Element = document.getElementById("xxxx") as HTMLElement; // <-mer secifik //
+let xxxx: Element = document.getElementById("xxxx") as HTMLElement;
 
 xxxx.addEventListener("click", () => {
   productPageContainer.className = "off";
   container.innerHTML = "";
+  // createHTMLForProduct(productList);
 });
 
-// PRODUKTSIDA ENSKILD //
-// fixa med diven //
-// addEventListener //
-// i diven kommer nu html för produkten att skapas //
-// ändring av klass (scss) //
-// knappen - varukorg //
-// krysset för att stänga //
-// vanliga klasser igen //
+// loopa igen efter enskild - alla med??? //

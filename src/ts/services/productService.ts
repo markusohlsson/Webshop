@@ -8,7 +8,8 @@ let headcover1: Product = new Product(
   "Headcovers som passar för din driver. Finns i en mängd olika motiv så att du kan finna just din favorit.",
   "Headcovers",
   "../assets/products/Headcover_1.jpg",
-  "headcover1"
+  "headcover1",
+  0
 );
 
 let headcover2: Product = new Product(
@@ -17,7 +18,8 @@ let headcover2: Product = new Product(
   "Headcovers som passar för din driver. Finns i en mängd olika motiv så att du kan finna just din favorit.",
   "Headcovers",
   "../assets/products/Headcover_2.jpg",
-  "headcover2"
+  "headcover2",
+  0
 );
 
 let headcover3: Product = new Product(
@@ -26,7 +28,8 @@ let headcover3: Product = new Product(
   "Headcovers som passar för din driver. Finns i en mängd olika motiv så att du kan finna just din favorit.",
   "Headcovers",
   "..assets/products/Headcover_3.jpg",
-  "headcover3"
+  "headcover3",
+  0
 );
 
 export let headcovers: Product[] = [headcover1, headcover2, headcover3];
@@ -39,7 +42,8 @@ let proFliHi: Product = new Product(
   "Mizuno Pro har alltid varit Mizunos mest innovationsinriktade serie med avancerad ingenjörskonst dold i ett stilrent och tidlöst paket.",
   "Golfklubbor",
   "../assets/products/Pro_Fli_Hi.jpg",
-  "proFliHi"
+  "proFliHi",
+  0
 );
 
 let stealthUDI: Product = new Product(
@@ -48,7 +52,8 @@ let stealthUDI: Product = new Product(
   "Stealth UDI är ett tourinspirerat utilityjärn riktat mot den bättre spelaren. Tyngdpunkten är placerad för att skapa en låg och penetrerande bollflykt med maximal kontroll.",
   "Golfklubbor",
   "../assets/products/Stealth_UDI.png",
-  "stealthUDI"
+  "stealthUDI",
+  0
 );
 
 let u510: Product = new Product(
@@ -57,7 +62,8 @@ let u510: Product = new Product(
   "Titleist U510 är ett utility-järn med hybridliknande egenskaper men med formen av en kraftfull järnklubba för högre utgångsvinkel och längd.",
   "Golfklubbor",
   "../assets/products/U510.jpg",
-  "u510"
+  "u510",
+  0
 );
 
 export let clubs: Product[] = [proFliHi, stealthUDI, u510];
@@ -70,7 +76,8 @@ let tp5Pop: Product = new Product(
   "Golfboll med...",
   "Golfbollar",
   "../assets/products/TP5_PIX_ROCKET_POP.jpg",
-  "tp5Pop"
+  "tp5Pop",
+  0
 );
 
 let tp5Sushi: Product = new Product(
@@ -79,7 +86,8 @@ let tp5Sushi: Product = new Product(
   "Golfboll med fräsch doft av fisk",
   "Golfbollar",
   "../assets/products/TP5_PIX_SUSHI.jpg",
-  "tp5Sushi"
+  "tp5Sushi",
+  0
 );
 
 let tp5Spider: Product = new Product(
@@ -88,7 +96,8 @@ let tp5Spider: Product = new Product(
   "Perfekt för familj med pälsallergi!",
   "Golfbollar",
   "../assets/products/TP5_PIX_SPIDER.jpg",
-  "tp5Spider"
+  "tp5Spider",
+  0
 );
 
 export let balls: Product[] = [tp5Pop, tp5Sushi, tp5Spider];
@@ -173,13 +182,13 @@ export function createHTMLForProduct(products: Product[]) {
     productDiv.appendChild(productContainer);
     bigContainer.appendChild(productDiv);
     // productPageContainer.appendChild(productDiv);
+
+    readMoreButton.addEventListener("click", () => {
+      localStorage.setItem("savedProductList", JSON.stringify(productList[i]));
+      // createHTMLForProduct(productList);
+    });
   }
 }
-
-readMoreButton.addEventListener("click", () => {
-  productPageContainer.className = "on";
-  createHTMLForProduct(productList);
-});
 
 // productDiv.addEventListener("click", () => {
 //   // här ska vi länkas över till en ny sida //

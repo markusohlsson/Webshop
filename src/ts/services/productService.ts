@@ -109,20 +109,26 @@ export let productList: Product[] = [
 
 /* Funktioner */
 
-let productPageContainer: HTMLDivElement = document.getElementById(
-  "productPageContainer"
+let container: HTMLDivElement = document.getElementById(
+  "container"
 ) as HTMLDivElement;
-
-let container: HTMLDivElement = document.createElement("div");
 
 let bigContainer: HTMLDivElement = document.getElementById(
   "productsContainer"
 ) as HTMLDivElement;
 
+let productPageContainer: HTMLDivElement = document.getElementById(
+  "productPageContainer"
+) as HTMLDivElement;
+
+let readMoreButton: HTMLButtonElement = document.createElement("button");
+
+let productContainer: HTMLDivElement = document.createElement("div");
+
 export function createHTMLForProduct(products: Product[]) {
   for (let i: number = 0; i < products.length; i++) {
     let productDiv: HTMLDivElement = document.createElement("div");
-    let productContainer: HTMLDivElement = document.createElement("div");
+    productContainer = document.createElement("div");
     let title: HTMLHeadingElement = document.createElement("h3");
     let imageContainer: HTMLDivElement = document.createElement("div");
     let image: HTMLImageElement = document.createElement("img");
@@ -130,8 +136,8 @@ export function createHTMLForProduct(products: Product[]) {
     let description: HTMLParagraphElement = document.createElement("p");
     let addToCartButton: HTMLButtonElement = document.createElement("button");
     let amountInput: HTMLInputElement = document.createElement("input");
+    readMoreButton = document.createElement("button");
 
-    let readMoreButton: HTMLButtonElement = document.createElement("button");
     let a: HTMLAnchorElement = document.createElement("a");
 
     productDiv.className = "product";
@@ -166,43 +172,37 @@ export function createHTMLForProduct(products: Product[]) {
 
     productDiv.appendChild(productContainer);
     bigContainer.appendChild(productDiv);
-
-    // klicka för att komma till produktsidan //
-
-    productDiv.addEventListener("click", () => {
-      // här ska vi länkas över till en ny sida //
-      //   productPageContainer.className = "on";
-      //   container.appendChild(productDiv);
-      //   productPageContainer.appendChild(container);
-    });
-
-    readMoreButton.addEventListener("click", () => {
-      // här är jag!!//
-    });
-
-    // // Create the text node for anchor element.
-    // var link = document.createTextNode("This is link");
-
-    // // Append the text node to anchor element.
-    // a.appendChild(link);
-
-    // // Set the title.
-    // a.title = "This is Link";
-
-    // // Set the href property.
-    // a.href = "https://www.geeksforgeeks.org";
-
-    // // Append the anchor element to the body.
-    // document.body.appendChild(a);
+    // productPageContainer.appendChild(productDiv);
   }
 }
+
+readMoreButton.addEventListener("click", () => {
+  productPageContainer.className = "on";
+  createHTMLForProduct(productList);
+});
+
+// productDiv.addEventListener("click", () => {
+//   // här ska vi länkas över till en ny sida //
+//   productPageContainer.className = "on";
+//   container.appendChild(productDiv);
+//   productPageContainer.appendChild(container);
+// });
+
+// readMoreButton.addEventListener("click", () => {
+//   // här är jag!!//
+// });
+
+// PRODUCTPAGE //
 
 // här borde vi med andra ord vara på produktsidan //
 
 let xxxx: Element = document.getElementById("xxxx") as HTMLElement;
+let aStartpage: HTMLAnchorElement = document.createElement("a");
+aStartpage.href = "../index.htmll#productsContainer";
+xxxx.appendChild(aStartpage);
 
 xxxx.addEventListener("click", () => {
-  productPageContainer.className = "off";
+  productPageContainer.className = "on";
   container.innerHTML = "";
   createHTMLForProduct(productList);
 });

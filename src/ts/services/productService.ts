@@ -109,20 +109,26 @@ export let productList: Product[] = [
 
 /* Funktioner */
 
-let productPageContainer: HTMLDivElement = document.getElementById(
-  "productPageContainer"
+let container: HTMLDivElement = document.getElementById(
+  "container"
 ) as HTMLDivElement;
-
-let container: HTMLDivElement = document.createElement("div");
 
 let bigContainer: HTMLDivElement = document.getElementById(
   "productsContainer"
 ) as HTMLDivElement;
 
+let productPageContainer: HTMLDivElement = document.getElementById(
+  "productPageContainer"
+) as HTMLDivElement;
+
+let readMoreButton: HTMLButtonElement = document.createElement("button");
+
+let productContainer: HTMLDivElement = document.createElement("div");
+
 export function createHTMLForProduct(products: Product[]) {
   for (let i: number = 0; i < products.length; i++) {
     let productDiv: HTMLDivElement = document.createElement("div");
-    let productContainer: HTMLDivElement = document.createElement("div");
+    productContainer = document.createElement("div");
     let title: HTMLHeadingElement = document.createElement("h3");
     let imageContainer: HTMLDivElement = document.createElement("div");
     let image: HTMLImageElement = document.createElement("img");
@@ -130,6 +136,9 @@ export function createHTMLForProduct(products: Product[]) {
     let description: HTMLParagraphElement = document.createElement("p");
     let addToCartButton: HTMLButtonElement = document.createElement("button");
     let amountInput: HTMLInputElement = document.createElement("input");
+    readMoreButton = document.createElement("button");
+
+    let a: HTMLAnchorElement = document.createElement("a");
 
     productDiv.className = "product";
     productContainer.className = "product" + "__" + products[i].id;
@@ -139,12 +148,17 @@ export function createHTMLForProduct(products: Product[]) {
     price.className = "product__price";
     description.className = "product__description";
     amountInput.type = "number";
+
+    readMoreButton.id = "buttonMore";
     // let amount:number = amountInput.valueAsNumber;
+
+    a.href = "/pages/productpage.html";
 
     title.innerHTML = products[i].title;
     price.innerHTML = products[i].price + " " + "kr"; // måste göra om till number sen
     description.innerHTML = products[i].description;
     addToCartButton.innerHTML = "Lägg i varukorg";
+    readMoreButton.innerHTML = "Läs mer...";
 
     productContainer.appendChild(title);
     productContainer.appendChild(imageContainer);
@@ -153,25 +167,42 @@ export function createHTMLForProduct(products: Product[]) {
     productContainer.appendChild(price);
     productContainer.appendChild(amountInput);
     productContainer.appendChild(addToCartButton);
+    a.appendChild(readMoreButton);
+    productContainer.appendChild(a);
 
     productDiv.appendChild(productContainer);
     bigContainer.appendChild(productDiv);
-
-    // förklaringar??? //
-
-    productDiv.addEventListener("click", () => {
-      // här ska vi länkas över till en ny sida //
-      productPageContainer.className = "on";
-      container.appendChild(productDiv);
-      productPageContainer.appendChild(container);
-    });
+    // productPageContainer.appendChild(productDiv);
   }
 }
 
+readMoreButton.addEventListener("click", () => {
+  productPageContainer.className = "on";
+  createHTMLForProduct(productList);
+});
+
+// productDiv.addEventListener("click", () => {
+//   // här ska vi länkas över till en ny sida //
+//   productPageContainer.className = "on";
+//   container.appendChild(productDiv);
+//   productPageContainer.appendChild(container);
+// });
+
+// readMoreButton.addEventListener("click", () => {
+//   // här är jag!!//
+// });
+
+// PRODUCTPAGE //
+
+// här borde vi med andra ord vara på produktsidan //
+
 let xxxx: Element = document.getElementById("xxxx") as HTMLElement;
+let aStartpage: HTMLAnchorElement = document.createElement("a");
+aStartpage.href = "../index.htmll#productsContainer";
+xxxx.appendChild(aStartpage);
 
 xxxx.addEventListener("click", () => {
-  productPageContainer.className = "off";
+  productPageContainer.className = "on";
   container.innerHTML = "";
   createHTMLForProduct(productList);
 });

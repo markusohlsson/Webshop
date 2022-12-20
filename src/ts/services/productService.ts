@@ -118,26 +118,21 @@ export let productList: Product[] = [
 
 /* Funktioner */
 
-// let container: HTMLDivElement = document.getElementById(
-//   "container"
-// ) as HTMLDivElement;
-
 let bigContainer: HTMLDivElement = document.getElementById(
   "productsContainer"
 ) as HTMLDivElement;
 
-// let productPageContainer: HTMLDivElement = document.getElementById(
-//   "productPageContainer"
-// ) as HTMLDivElement;
-
 let readMoreButton: HTMLButtonElement = document.createElement("button");
 
-let productContainer: HTMLDivElement = document.createElement("div");
+// let headingAllProducts: HTMLHeadingElement = document.createElement("h2");
+// headingAllProducts.innerHTML = "Alla produkter";
+// bigContainer.appendChild(headingAllProducts);
+// headingAllProducts.className = "headingProducts"; //ändra namn//
 
 export function createHTMLForProduct(products: Product[]) {
   for (let i: number = 0; i < products.length; i++) {
     let productDiv: HTMLDivElement = document.createElement("div");
-    productContainer = document.createElement("div");
+    let productContainer: HTMLDivElement = document.createElement("div");
     let title: HTMLHeadingElement = document.createElement("h3");
     let imageContainer: HTMLDivElement = document.createElement("div");
     let image: HTMLImageElement = document.createElement("img");

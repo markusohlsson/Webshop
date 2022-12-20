@@ -75,8 +75,6 @@ let productDescription = productList[0].description;
 
 createHTMLForProductPage(theList);
 
-console.log(theList);
-
 // xxxx.addEventListener("click", () => {
 //     productPageContainer.className = "on";
 //     productContainer.innerHTML = "";

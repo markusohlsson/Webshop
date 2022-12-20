@@ -118,17 +118,17 @@ export let productList: Product[] = [
 
 /* Funktioner */
 
-let container: HTMLDivElement = document.getElementById(
-  "container"
-) as HTMLDivElement;
+// let container: HTMLDivElement = document.getElementById(
+//   "container"
+// ) as HTMLDivElement;
 
 let bigContainer: HTMLDivElement = document.getElementById(
   "productsContainer"
 ) as HTMLDivElement;
 
-let productPageContainer: HTMLDivElement = document.getElementById(
-  "productPageContainer"
-) as HTMLDivElement;
+// let productPageContainer: HTMLDivElement = document.getElementById(
+//   "productPageContainer"
+// ) as HTMLDivElement;
 
 let readMoreButton: HTMLButtonElement = document.createElement("button");
 
@@ -143,7 +143,7 @@ export function createHTMLForProduct(products: Product[]) {
     let image: HTMLImageElement = document.createElement("img");
     let price: HTMLParagraphElement = document.createElement("p");
     let description: HTMLParagraphElement = document.createElement("p");
-    let addToCartButton: HTMLButtonElement = document.createElement("button");
+    // let addToCartButton: HTMLButtonElement = document.createElement("button");
     let amountInput: HTMLInputElement = document.createElement("input");
     readMoreButton = document.createElement("button");
 
@@ -166,7 +166,7 @@ export function createHTMLForProduct(products: Product[]) {
     title.innerHTML = products[i].title;
     price.innerHTML = products[i].price + " " + "kr"; // måste göra om till number sen
     description.innerHTML = products[i].description;
-    addToCartButton.innerHTML = "Lägg i varukorg";
+    // addToCartButton.innerHTML = "Lägg i varukorg";
     readMoreButton.innerHTML = "Läs mer...";
 
     productContainer.appendChild(title);
@@ -175,7 +175,7 @@ export function createHTMLForProduct(products: Product[]) {
     productContainer.appendChild(description);
     productContainer.appendChild(price);
     productContainer.appendChild(amountInput);
-    productContainer.appendChild(addToCartButton);
+    // productContainer.appendChild(addToCartButton);
     a.appendChild(readMoreButton);
     productContainer.appendChild(a);
 
@@ -205,16 +205,16 @@ export function createHTMLForProduct(products: Product[]) {
 
 // här borde vi med andra ord vara på produktsidan //
 
-let xxxx: Element = document.getElementById("xxxx") as HTMLElement;
-let aStartpage: HTMLAnchorElement = document.createElement("a");
-aStartpage.href = "../index.htmll#productsContainer";
-xxxx.appendChild(aStartpage);
+// let xxxx: Element = document.getElementById("xxxx") as HTMLElement;
+// let aStartpage: HTMLAnchorElement = document.createElement("a");
+// aStartpage.href = "../index.htmll#productsContainer";
+// xxxx.appendChild(aStartpage);
 
-xxxx.addEventListener("click", () => {
-  productPageContainer.className = "on";
-  container.innerHTML = "";
-  createHTMLForProduct(productList);
-});
+// xxxx.addEventListener("click", () => {
+//   productPageContainer.className = "on";
+//   container.innerHTML = "";
+//   createHTMLForProduct(productList);
+// });
 
 // loopa igen efter enskild - alla med??? //
 

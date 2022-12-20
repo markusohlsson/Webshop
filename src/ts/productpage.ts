@@ -14,12 +14,12 @@ let productContainer: HTMLDivElement = document.getElementById(
   "container"
 ) as HTMLDivElement;
 
-let testListString: any = localStorage.getItem("savedProductList"); // HJÄLP //
+let testListString: string = localStorage.getItem("savedProductList") || "";
 let listProduct = JSON.parse(testListString);
 
 let theList: Product[] = [listProduct];
 
-let cartList: Product[] = [];
+let cartList: Product[];
 
 function createHTMLForProductPage(productList: Product[]) {
   for (let i: number = 0; i < theList.length; i++) {
@@ -62,8 +62,9 @@ function createHTMLForProductPage(productList: Product[]) {
     // productPageContainer.appendChild(productDiv);
 
     addToCartButton.addEventListener("click", () => {
-      // let test: string = JSON.stringify(productList[i].amount++);
-      // cartList.push(productList[i], test);
+      // cartList = JSON.parse(localStorage.getItem("cartList") || "");
+      productList[i].amount++;
+      cartList.push(productList[i]);
       localStorage.setItem("cartList", JSON.stringify(cartList));
     });
   }

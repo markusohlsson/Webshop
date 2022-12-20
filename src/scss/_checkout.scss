@@ -5,49 +5,100 @@
     cursor: pointer;
 }
 #checkoutContainer{
-    position: fixed;
-    top:100px;
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    display: none;
-
-    h3{
-        width:100%;
-    }
-    i{
-        position: absolute;
-        top:10px;
-        right:10px;
-        font-size:35px;
-    }
-    form{
-        display:flex;
-        flex-direction: column;
+    .product {
+        width: 300px; 
+        border: 1px solid gray;
+        display: flex;
+        justify-content: center;
         align-items: center;
-        gap:10px;
-        input{
-            text-align: center;
-            height: 25px;
-            width:80%;
-        }
-        textarea{
-            text-align: center;
-            height:250px;
-            width:80%;
-        }
-    }
-    button {
-    border:1px solid grey;
-    background-color: v.$seventhcolor;
-    height:50px;
-    width:250px;
+        padding: 10px;
+        margin-top: 10px;
+        background-color: rgb(243, 243, 243);
 
-}    button:hover{
-    background-color: v.$fifthcolor;
+        @include m.desktop {
+            // width: 300px;
+        }
+
+        &__title {
+            font-size: 20px;
+            text-align: center;
+            margin: 0px;
+            margin-bottom: 5px;
+        }
+
+        &__price {
+            font-size: 20px;
+            text-align: center;
+            margin: 0px;
+            margin-top: 5px;
+        }
+
+        &__headcover1 {
+            @include m.product(url("../assets/products/Headcover_1.jpg"));
+        }
+
+        &__headcover2 {
+            @include m.product(url("../assets/products/Headcover_2.jpg"));
+        }
+
+        &__headcover3 {
+            @include m.product(url("../assets/products/Headcover_3.jpg"));
+        }
+
+        &__proFliHi {
+            @include m.product(url("../assets/products/Pro_Fli_Hi.jpg"));
+        }
+
+        &__stealthUDI {
+            @include m.product(url("../assets/products/Stealth_UDI.png"));
+        }
+
+        &__u510 {
+            @include m.product(url("../assets/products/U510.jpg"));
+        }
+
+        &__tp5Pop {
+            @include m.product(url("../assets/products/TP5_PIX_ROCKET_POP.jpg"));
+        }
+
+        &__tp5Sushi {
+            @include m.product(url("../assets/products/TP5_PIX_SUSHI.jpg"));
+        }
+
+        &__tp5Spider {
+            @include m.product(url("../assets/products/TP5_PIX_SPIDER.jpg"));
+        }
+
+        &__description {
+            display: none;
+        }
+
+        input {
+            width:35px;
+            font-size:25px;
+            border:0;
+            background-color: rgb(243, 243, 243);
+
+        }
+
+        // button {
+        //     display: none;
+        // }
+
+        #buttonMore {
+            display: flex;
+        } 
+    }
+
+    .product:hover {
+        cursor: pointer;
+        border: 3px solid gray;
+    }
+
 }
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+
+   opacity: 1;
 
 }

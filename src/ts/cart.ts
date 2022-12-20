@@ -9,42 +9,6 @@ hamburgericon?.addEventListener("click", function (event) {
   
 
 
-
-// // Shopping Cart 
-// let container:HTMLDivElement = document.getElementById("shoppingCartContainer") as HTMLDivElement;
-
-// let icon:HTMLElement = document.createElement("i") as HTMLElement;
-// let button:HTMLButtonElement = document.createElement("button") as HTMLButtonElement;
-// let x:HTMLAnchorElement = document.createElement("a") as HTMLAnchorElement;
-// let x2:HTMLAnchorElement = document.createElement("a") as HTMLAnchorElement;
-
-// x2.href="../pages/checkout.html";
-// x.href="../index.html";
-
-
-
-// button.innerHTML="Gå till kassan";
-// icon.className="fa-solid fa-x";
-// export function shoppingCart(){
-//     x2.appendChild(button);
-//     x.appendChild(icon);
-//     container.appendChild(title);
-//     container.appendChild(x);
-//     container.appendChild(x2);
-//     container.style.display="flex";
-//     icon.addEventListener ("click", function (event){
-//       container.style.display="none";
-//       container.innerHTML="";
-//     });
-//     button.addEventListener ("click", function (event){
-//         container.style.display="none";
-        
-//       });
-//   }
-  
-
-  // shoppingCart();
-
   // Products 
 
   let shoppingCartContainer: HTMLDivElement = document.getElementById("shoppingCartContainer") as HTMLDivElement;
@@ -52,11 +16,13 @@ hamburgericon?.addEventListener("click", function (event) {
   let title:HTMLHeadingElement = document.createElement("h3") as HTMLHeadingElement;
   title.innerHTML="Varukorg";
   shoppingCartContainer.appendChild(title);
+  let aTag:HTMLAnchorElement = document.createElement("a");
+  aTag.href="../pages/checkout.html";
+  aTag.appendChild(cartButton);
 function test(){
   var retrievedObject = JSON.parse(localStorage.getItem("cartList")||"");
   let nylista = [];
   for (let i = 0; i < retrievedObject.length; i++) {
-   
     nylista.push(retrievedObject);
     console.log(retrievedObject);
   }
@@ -71,6 +37,7 @@ function test(){
     let price: HTMLParagraphElement = document.createElement("p");
     let description: HTMLParagraphElement = document.createElement("p");
     let amountInput: HTMLInputElement = document.createElement("input");
+
 
 
 
@@ -106,12 +73,11 @@ function test(){
     } else {
       retrievedObject[i].amount--;
     }
-      // retrievedObject[i].amount;
       localStorage.setItem("cartList", JSON.stringify(retrievedObject));
       console.log(retrievedObject[i].amount);
     });
   }
+  shoppingCartContainer.appendChild(aTag);
 }
 
 test();
-shoppingCartContainer.appendChild(cartButton);

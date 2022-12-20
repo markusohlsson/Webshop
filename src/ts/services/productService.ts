@@ -180,39 +180,6 @@ export function createHTMLForProduct(products: Product[]) {
 
     readMoreButton.addEventListener("click", () => {
       localStorage.setItem("savedProductList", JSON.stringify(productList[i]));
-      // createHTMLForProduct(productList);
     });
   }
 }
-
-// productDiv.addEventListener("click", () => {
-//   // här ska vi länkas över till en ny sida //
-//   productPageContainer.className = "on";
-//   container.appendChild(productDiv);
-//   productPageContainer.appendChild(container);
-// });
-
-// readMoreButton.addEventListener("click", () => {
-//   // här är jag!!//
-// });
-
-// PRODUCTPAGE //
-
-// här borde vi med andra ord vara på produktsidan //
-
-// let xxxx: Element = document.getElementById("xxxx") as HTMLElement;
-// let aStartpage: HTMLAnchorElement = document.createElement("a");
-// aStartpage.href = "../index.htmll#productsContainer";
-// xxxx.appendChild(aStartpage);
-
-// xxxx.addEventListener("click", () => {
-//   productPageContainer.className = "on";
-//   container.innerHTML = "";
-//   createHTMLForProduct(productList);
-// });
-
-// loopa igen efter enskild - alla med??? //
-
-// fixa så att priset syns på den enskilda sidan - ändra inställningarna på knappen //
-
-// flytta över till 4 olika html-filer //

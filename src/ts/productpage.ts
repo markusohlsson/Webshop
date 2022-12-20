@@ -1,18 +1,11 @@
 import { Product } from "./models/Product";
-import { productList } from "./services/productService";
+
+// Krysset //
 
 let xxxx: Element = document.getElementById("xxxx") as HTMLElement;
 let aStartpage: HTMLAnchorElement = document.createElement("a");
 aStartpage.href = "../index.html#productsContainer";
 xxxx.appendChild(aStartpage);
-
-let productPageContainer: HTMLDivElement = document.getElementById(
-  "productsContainer"
-) as HTMLDivElement;
-
-let productContainer: HTMLDivElement = document.getElementById(
-  "container"
-) as HTMLDivElement;
 
 // hämta från LS //
 let testListString: string = localStorage.getItem("savedProductList") || "";
@@ -22,8 +15,12 @@ let listProduct: Product = JSON.parse(testListString);
 let cartList: Product[] = [];
 
 function createHTMLForProductPage(productList: Product) {
-  let productDiv: HTMLDivElement = document.createElement("div");
-  productContainer = document.createElement("div");
+  let productPageBigContainer: HTMLDivElement = document.getElementById(
+    "productPageBigContainer"
+  ) as HTMLDivElement;
+  let productPageContainer: HTMLDivElement = document.getElementById(
+    "productPageContainer"
+  ) as HTMLDivElement;
   let title: HTMLHeadingElement = document.createElement("h3");
   let imageContainer: HTMLDivElement = document.createElement("div");
   let image: HTMLImageElement = document.createElement("img");
@@ -32,8 +29,7 @@ function createHTMLForProductPage(productList: Product) {
   let addToCartButton: HTMLButtonElement = document.createElement("button");
   let amountInput: HTMLInputElement = document.createElement("input");
 
-  productDiv.className = "product";
-  productContainer.className = "product" + "__" + productList.id;
+  productPageContainer.className = "product" + "__" + productList.id;
   title.className = "product__title";
   imageContainer.className = "product__imageContainer";
   image.className = "product__imageContainer__img";
@@ -48,17 +44,15 @@ function createHTMLForProductPage(productList: Product) {
   description.innerHTML = productList.description;
   addToCartButton.innerHTML = "Lägg i varukorg";
 
-  productContainer.appendChild(title);
-  productContainer.appendChild(imageContainer);
+  productPageContainer.appendChild(imageContainer);
   imageContainer.appendChild(image);
-  productContainer.appendChild(description);
-  productContainer.appendChild(price);
-  productContainer.appendChild(amountInput);
-  productContainer.appendChild(addToCartButton);
+  productPageContainer.appendChild(title);
+  productPageContainer.appendChild(description);
+  productPageContainer.appendChild(price);
+  // productPageContainer.appendChild(amountInput);
+  productPageContainer.appendChild(addToCartButton);
 
-  productDiv.appendChild(productContainer);
-  productPageContainer.appendChild(productDiv);
-  // productPageContainer.appendChild(productDiv);
+  productPageBigContainer.appendChild(productPageContainer);
 
   addToCartButton.addEventListener("click", () => {
     const cartListJSON: string = localStorage.getItem("cartList") || "";

@@ -5,8 +5,11 @@
     cursor: pointer;
 }
 #checkoutContainer{
+    .productsContainer{
+        display: flex;
+        flex-direction: column;
     .product {
-        width: 300px; 
+        width: 300px;
         border: 1px solid gray;
         display: flex;
         justify-content: center;
@@ -14,10 +17,11 @@
         padding: 10px;
         margin-top: 10px;
         background-color: rgb(243, 243, 243);
-
+        flex-direction: row;
         @include m.desktop {
             // width: 300px;
         }
+
 
         &__title {
             font-size: 20px;
@@ -32,9 +36,12 @@
             margin: 0px;
             margin-top: 5px;
         }
+        
 
         &__headcover1 {
+            
             @include m.product(url("../assets/products/Headcover_1.jpg"));
+
         }
 
         &__headcover2 {
@@ -94,11 +101,27 @@
         cursor: pointer;
         border: 3px solid gray;
     }
-
+    .product__imageContainer{
+    .product__imageContainer__img{
+        height:100px;
+        width:100px;
+        align-items:flex-start;
+    }
+}
 }
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button {  
 
    opacity: 1;
-
+}
+.formContainer{
+    display: flex;
+    width:100%;
+    form{
+        width:100%;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+}
 }

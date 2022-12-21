@@ -96,8 +96,8 @@
                     height: 300px;
 
                     @include m.desktop {
-                        width: 800px;
-                        height: 800px;
+                        width: 600px;
+                        height: 600px;
                         display: flex;
                         justify-content: left;
                         background-repeat: no-repeat;
@@ -119,8 +119,6 @@
                     margin-left: 25px;
                 }
             }
-
-
             
             &__description {
                 display: block;
@@ -129,7 +127,7 @@
                 padding: 0px 30px 0px 30px;
 
                 @include m.desktop { 
-                    width: 675px;
+                    width: 450px;
                     text-align: left;
                     position: relative;
                     left: 25px;
@@ -138,12 +136,20 @@
             }
 
             &__price {
-                
+                font-size: 20px;
+                text-align: center;
+                margin: 0px;
+                margin-top: 5px;
+
+                @include m.desktop {
+                    text-align: left;
+                    margin-left: 25px;
+                }
             }
 
-            &__amountInput {
+            // &__amountInput {
                 
-            }
+            // }
 
             &__addToCartButton {
                 display: block;
@@ -162,11 +168,11 @@
                     bottom: 25px;
                     right: 25px;    
                 }
+            }
 
-                button:hover {
-                    cursor: pointer;
-                    font-size: large;
-                }
+            button:hover {
+                cursor: pointer;
+                font-size: larger;
             }
         }
     }    
@@ -189,19 +195,9 @@
 //     @include m.desktop {
 //     }
 
-//     &__price {
-//             font-size: 20px;
-//             text-align: center;
-//             margin: 0px;
-//             margin-top: 5px;
-//             display: block;
-            
-//             @include m.desktop {
-//                 text-align: right;
-//                 position: fixed;
-//                 right: 25px;
-//             }
-//     }
+
+
+
 
 //     input {
 //         display: none;

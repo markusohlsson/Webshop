@@ -22,9 +22,9 @@ createHTMLForProduct(productList);
 
 // Hamburger
 
-hamburgericon?.addEventListener("click", function (event) {
-  hamburgermenu();
-});
+// hamburgericon?.addEventListener("click", function (event) {
+//   hamburgermenu();
+// });
 
 //About
 let about = document.getElementById("about");
@@ -38,8 +38,8 @@ contact?.addEventListener("click", function (event) {
   contactus();
 });
 
-// Cart
-let cart = document.getElementById("cart");
-cart?.addEventListener("click", function (event) {
-  shoppingCart();
-});
+// // Cart
+// let cart = document.getElementById("cart");
+// cart?.addEventListener("click", function (event) {
+//   shoppingCart();
+// });

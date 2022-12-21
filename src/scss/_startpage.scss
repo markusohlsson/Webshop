@@ -48,7 +48,6 @@ body {
                 }
             }
 
-
             .welcome__page__navigation__icon__hamburger{
                 color:v.$secondarycolor;  
                 display: flex;
@@ -127,7 +126,7 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-    .welcome__page__textbox__title{  // kan skriva i den ovan och sen skriva &__title 
+    .welcome__page__textbox__title{  // kan skriva i den ovan och sen skriva &__title //
         margin:0;
         display:flex;
         color:v.$secondarycolor;

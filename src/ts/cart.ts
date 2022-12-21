@@ -55,6 +55,8 @@ function test() {
     amountInput.className = "product__amountInput";
     amountInput.type = "number";
     amountInput.value = retrievedObject[i].amount;
+    amountInput.max = "10";
+    amountInput.min = "1";
     cartButton.innerHTML = "Gå till kassan";
 
     // let amount:number = amountInput.valueAsNumber;

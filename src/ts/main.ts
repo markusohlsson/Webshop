@@ -22,9 +22,9 @@ createHTMLForProduct(productList);
 
 // Hamburger
 
-// hamburgericon?.addEventListener("click", function (event) {
-//   hamburgermenu();
-// });
+hamburgericon?.addEventListener("click", function (event) {
+  hamburgermenu();
+});
 
 //About
 let about = document.getElementById("about");

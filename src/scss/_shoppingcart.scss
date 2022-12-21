@@ -4,94 +4,143 @@
     color:v.$sixthcolor;
     cursor: pointer;
 }
+
 #shoppingCartContainer{
-    .product {
-        width: 300px; 
-        border: 1px solid gray;
+    #pCId {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         padding: 10px;
         margin-top: 10px;
-        background-color: rgb(243, 243, 243);
 
         @include m.desktop {
-            // width: 300px;
+            flex-direction: row;
+            justify-content: left;
+            gap: 30px;
         }
+    }
+
+    .product {
+
+            &__headcover1 {
+                @include m.productPage(url("../assets/products/Headcover_1.jpg"));
+            }
+        
+            &__headcover2 {
+                @include m.productPage(url("../assets/products/Headcover_2.jpg"));
+            }
+        
+            &__headcover3 {
+                @include m.productPage(url("../assets/products/Headcover_3.jpg"));
+            }
+        
+            &__proFliHi {
+                @include m.productPage(url("../assets/products/Pro_Fli_Hi.jpg"));
+            }
+        
+            &__stealthUDI {
+                @include m.productPage(url("../assets/products/Stealth_UDI.png"));
+            }
+        
+            &__u510 {
+                @include m.productPage(url("../assets/products/U510.jpg"));
+            }
+        
+            &__tp5Pop {
+                @include m.productPage(url("../assets/products/TP5_PIX_ROCKET_POP.jpg"));
+            }
+        
+            &__tp5Sushi {
+                @include m.productPage(url("../assets/products/TP5_PIX_SUSHI.jpg"));
+            }
+        
+            &__tp5Spider {
+                @include m.productPage(url("../assets/products/TP5_PIX_SPIDER.jpg"));
+            }
+
+        &__imageContainer {
+            display: flex;
+            justify-content: center;
+
+            @include m.desktop {
+                justify-content: left;
+                margin-left: 25px;
+            }
+
+            &__img {
+                height: 100px;
+                width:100px;
+
+                @include m.desktop {
+                    width: 100px;
+                    height: 100px;
+                    display: flex;
+                    justify-content: left;
+                    background-repeat: no-repeat;
+                }
+            } 
+        }   
 
         &__title {
             font-size: 20px;
             text-align: center;
-            margin: 0px;
+            // justify-content: center;
+            margin: 0px;               
             margin-bottom: 5px;
-        }
 
+            @include m.desktop {
+                margin: 0px;
+                width: 200px;
+                text-align: left;
+            }
+            
+        }
+    
         &__price {
             font-size: 20px;
             text-align: center;
+            // display: flex;
+            // justify-content: center;
             margin: 0px;
             margin-top: 5px;
+
+            @include m.desktop {
+                margin: 0px;
+                width: 200px;
+                text-align: right;
+            }
         }
 
-        &__headcover1 {
-            @include m.product(url("../assets/products/Headcover_1.jpg"));
+        &__amountInput{
+            // display: flex;
+            // justify-content: center;
+            // width: 100px; 
+            // align-items: center;
         }
-
-        &__headcover2 {
-            @include m.product(url("../assets/products/Headcover_2.jpg"));
-        }
-
-        &__headcover3 {
-            @include m.product(url("../assets/products/Headcover_3.jpg"));
-        }
-
-        &__proFliHi {
-            @include m.product(url("../assets/products/Pro_Fli_Hi.jpg"));
-        }
-
-        &__stealthUDI {
-            @include m.product(url("../assets/products/Stealth_UDI.png"));
-        }
-
-        &__u510 {
-            @include m.product(url("../assets/products/U510.jpg"));
-        }
-
-        &__tp5Pop {
-            @include m.product(url("../assets/products/TP5_PIX_ROCKET_POP.jpg"));
-        }
-
-        &__tp5Sushi {
-            @include m.product(url("../assets/products/TP5_PIX_SUSHI.jpg"));
-        }
-
-        &__tp5Spider {
-            @include m.product(url("../assets/products/TP5_PIX_SPIDER.jpg"));
-        }
-
-        &__description {
-            display: none;
-        }
-
-        input {
-
-        }
-
-        // button {
-        //     display: none;
-        // }
-
-        #buttonMore {
-            display: flex;
-        } 
     }
 
-    .product:hover {
+    button {
+        display: block;
+        position: fixed;
+        bottom: 0px;
+        height: 75px;
+        width: 100%;
+        margin: 0;
+        background-color: v.$fifthcolor;
+        color: white;
+        font-size: large;
+
+        @include m.desktop {
+            height: 75px; 
+            width: 350px;   
+            bottom: 25px;
+            right: 25px;    
+        }
+    }
+
+    button:hover {
         cursor: pointer;
-        border: 3px solid gray;
+        font-size: larger;
     }
-
-    // .off {
-    //     display: none;
-    // }
 }

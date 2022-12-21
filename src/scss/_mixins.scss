@@ -26,3 +26,17 @@
         }
     }
 }
+
+@mixin productPage($background-image: url("../assets/Golfcourse_image.jpg")){
+    .product { 
+        &__imageContainer {
+        display: flex;
+
+            &__img {
+                background-image: $background-image;
+                background-position: center; 
+                background-size: contain;
+            }
+        }
+    }
+}

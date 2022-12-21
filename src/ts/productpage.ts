@@ -24,18 +24,21 @@ function createHTMLForProductPage(productList: Product) {
   let title: HTMLHeadingElement = document.createElement("h3");
   let imageContainer: HTMLDivElement = document.createElement("div");
   let image: HTMLImageElement = document.createElement("img");
+  let textContainer: HTMLDivElement = document.createElement("div");
   let price: HTMLParagraphElement = document.createElement("p");
   let description: HTMLParagraphElement = document.createElement("p");
   let addToCartButton: HTMLButtonElement = document.createElement("button");
   let amountInput: HTMLInputElement = document.createElement("input");
 
   productPageContainer.className = "product" + "__" + productList.id;
-  title.className = "product__title";
+  title.className = "product__textContainer__title";
   imageContainer.className = "product__imageContainer";
   image.className = "product__imageContainer__img";
-  price.className = "product__price";
-  description.className = "product__description";
-  amountInput.type = "number";
+  textContainer.className = "product__textContainer";
+  price.className = "product__textContainer__price";
+  description.className = "product__textContainer__description";
+  addToCartButton.className = "product__textContainer__addToCartButton";
+  // amountInput.type = "number";
 
   // let amount:number = amountInput.valueAsNumber;
 
@@ -46,12 +49,13 @@ function createHTMLForProductPage(productList: Product) {
 
   productPageContainer.appendChild(imageContainer);
   imageContainer.appendChild(image);
-  productPageContainer.appendChild(title);
-  productPageContainer.appendChild(description);
-  productPageContainer.appendChild(price);
+  textContainer.appendChild(title);
+  textContainer.appendChild(description);
+  textContainer.appendChild(price);
   // productPageContainer.appendChild(amountInput);
-  productPageContainer.appendChild(addToCartButton);
+  textContainer.appendChild(addToCartButton);
 
+  productPageContainer.appendChild(textContainer);
   productPageBigContainer.appendChild(productPageContainer);
 
   addToCartButton.addEventListener("click", () => {

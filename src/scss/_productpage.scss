@@ -36,7 +36,11 @@
 
     #productPageContainer {
         display: flex;
-        // flex-direction: column;
+        flex-direction: column;
+
+        @include m.desktop {
+            flex-direction: row;
+        }
     }
 
     .product {
@@ -101,26 +105,71 @@
                 }   
             } 
 
-        &__title {
-            
-        }
-        
-        &__description {
-            
-        }
+        &__textContainer {
+            flex-direction: column;
 
-        &__price {
-            
-        }
+            &__title {
+                font-size: 20px;
+                text-align: center;
+                margin: 0px;
+                margin-top: 15px;
 
-        &__amountInput {
-            
-        }
+                @include m.desktop {
+                    text-align: left;
+                    margin-left: 25px;
+                }
+            }
 
-        &__addToCartButton {
+
             
+            &__description {
+                display: block;
+                position: relative;
+                text-align: center;
+                padding: 0px 30px 0px 30px;
+
+                @include m.desktop { 
+                    width: 675px;
+                    text-align: left;
+                    position: relative;
+                    left: 25px;
+                    padding: 0px;
+                }
+            }
+
+            &__price {
+                
+            }
+
+            &__amountInput {
+                
+            }
+
+            &__addToCartButton {
+                display: block;
+                position: fixed;
+                bottom: 0px;
+                height: 75px;
+                width: 100%;
+                margin: 0;
+                background-color: v.$fifthcolor;
+                color: white;
+                font-size: large;
+
+                @include m.desktop {
+                    height: 75px; 
+                    width: 350px;   
+                    bottom: 25px;
+                    right: 25px;    
+                }
+
+                button:hover {
+                    cursor: pointer;
+                    font-size: large;
+                }
+            }
         }
-    }
+    }    
 }
 
 
@@ -138,37 +187,6 @@
 //     cursor: auto;
 
 //     @include m.desktop {
-//     }
-
-//     &__title {
-//         font-size: 20px;
-//         text-align: center;
-//         margin: 0px;
-//         margin-bottom: 5px;
-
-//         @include m.desktop {
-//             text-align: left;
-//             position: relative;
-//             left: 25px;
-//         }
-//     }
-
-
-
-//     &__description {
-//         display: block;
-//         position: relative;
-//         text-align: center;
-//         // width: 300px;
-//         padding: 0px 30px 0px 30px;
-
-//         @include m.desktop { 
-//             width: 675px;
-//             text-align: left;
-//             position: relative;
-//             left: 25px;
-//             padding: 0px;
-//         }
 //     }
 
 //     &__price {
@@ -189,25 +207,3 @@
 //         display: none;
 //     }
 
-//     button {
-//         display: block;
-//         position: fixed;
-//         bottom: 0px;
-//         height: 75px;
-//         width: 100%;
-//         margin: 0;
-//         background-color: v.$fifthcolor;
-//         color: white;
-//         font-size: large;
-
-//         @include m.desktop {
-//             height: 75px; 
-//             width: 350px;   
-//             bottom: 25px;
-//             right: 25px;    
-//         }
-//     }
-
-// button:hover {
-//     cursor: pointer;
-//     font-size: 

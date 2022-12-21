@@ -6,10 +6,12 @@ body {
     font-family:rubik;
     scroll-behavior: smooth;
     position: relative;
+
     .welcome__page{
         position:fixed;
         width:100%;
-        .welcome__page__navigation{
+
+        .welcome__page__navigation{ // kan skriva &__navigation 
             position:static;
             display:flex;
             height:100px;
@@ -19,6 +21,7 @@ body {
                 height:100px;
                 }
             }
+
             .welcome__page__navigation__title{
                 width:100%;
                 display: flex;
@@ -31,14 +34,21 @@ body {
                     color:v.$secondarycolor;
                 }
             }
+
             .welcome__page__navigation__icon{
-                color:v.$secondarycolor;  
+                // color:v.$secondarycolor;  
                 display: flex;
                 justify-content: space-around;
                 width:25%;
                 align-items: center;
                 margin:0;
+
+                a {
+                    color: white;
+                }
             }
+
+
             .welcome__page__navigation__icon__hamburger{
                 color:v.$secondarycolor;  
                 display: flex;
@@ -117,7 +127,7 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-    .welcome__page__textbox__title{
+    .welcome__page__textbox__title{  // kan skriva i den ovan och sen skriva &__title 
         margin:0;
         display:flex;
         color:v.$secondarycolor;

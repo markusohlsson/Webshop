@@ -124,10 +124,10 @@ let bigContainer: HTMLDivElement = document.getElementById(
 
 let readMoreButton: HTMLButtonElement = document.createElement("button");
 
-// let headingAllProducts: HTMLHeadingElement = document.createElement("h2");
-// headingAllProducts.innerHTML = "Alla produkter";
-// bigContainer.appendChild(headingAllProducts);
-// headingAllProducts.className = "headingProducts"; //ändra namn//
+let headingAllProducts: HTMLHeadingElement = document.createElement("h2");
+headingAllProducts.innerHTML = "Alla produkter";
+bigContainer.appendChild(headingAllProducts);
+headingAllProducts.className = "headingProducts"; //ändra namn//
 
 export function createHTMLForProduct(products: Product[]) {
   for (let i: number = 0; i < products.length; i++) {
@@ -137,9 +137,8 @@ export function createHTMLForProduct(products: Product[]) {
     let imageContainer: HTMLDivElement = document.createElement("div");
     let image: HTMLImageElement = document.createElement("img");
     let price: HTMLParagraphElement = document.createElement("p");
-    let description: HTMLParagraphElement = document.createElement("p");
-    // let addToCartButton: HTMLButtonElement = document.createElement("button");
-    let amountInput: HTMLInputElement = document.createElement("input");
+    // let description: HTMLParagraphElement = document.createElement("p");
+    // let amountInput: HTMLInputElement = document.createElement("input");
     readMoreButton = document.createElement("button");
 
     let a: HTMLAnchorElement = document.createElement("a");
@@ -150,8 +149,8 @@ export function createHTMLForProduct(products: Product[]) {
     imageContainer.className = "product__imageContainer";
     image.className = "product__imageContainer__img";
     price.className = "product__price";
-    description.className = "product__description";
-    amountInput.type = "number";
+    // description.className = "product__description";
+    // amountInput.type = "number";
 
     readMoreButton.id = "buttonMore";
     // let amount:number = amountInput.valueAsNumber;
@@ -160,16 +159,16 @@ export function createHTMLForProduct(products: Product[]) {
 
     title.innerHTML = products[i].title;
     price.innerHTML = products[i].price + " " + "kr"; // måste göra om till number sen
-    description.innerHTML = products[i].description;
+    // description.innerHTML = products[i].description;
     // addToCartButton.innerHTML = "Lägg i varukorg";
     readMoreButton.innerHTML = "Läs mer...";
 
     productContainer.appendChild(title);
     productContainer.appendChild(imageContainer);
     imageContainer.appendChild(image);
-    productContainer.appendChild(description);
+    // productContainer.appendChild(description);
     productContainer.appendChild(price);
-    productContainer.appendChild(amountInput);
+    // productContainer.appendChild(amountInput);
     // productContainer.appendChild(addToCartButton);
     a.appendChild(readMoreButton);
     productContainer.appendChild(a);

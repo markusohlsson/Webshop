@@ -71,6 +71,24 @@ function test() {
     // productsContainer.appendChild(productContainer);
     checkoutContainer.appendChild(productContainer);
 
+      // Testar lite 
+      let totalAmount = document.createElement("p");
+      let sum = retrievedObject[i].amount;
+      let sumAmount = retrievedObject[i].price;
+      let totalSum = sum*sumAmount;
+      let totalSumAsString = JSON.stringify(totalSum);
+      totalAmount.innerHTML=totalSumAsString+" "+"kr";
+      totalAmount.className="product__sum";
+      productContainer.appendChild(totalAmount);
+      amountInput.addEventListener("change",()=>{
+        let sum:number = retrievedObject[i].amount;
+        let sumAmount:number = retrievedObject[i].price;
+        let totalSum:number = sum*sumAmount;
+        let totalSumAsString:string = JSON.stringify(totalSum);
+        totalAmount.innerHTML=totalSumAsString+" "+"kr";
+        console.log(totalSumAsString);
+      })
+
     amountInput.addEventListener("input", () => {
       if (retrievedObject[i].amount < amountInput.value) {
         retrievedObject[i].amount++;

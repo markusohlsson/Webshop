@@ -91,6 +91,7 @@ function test() {
     let totalSum = sum*sumAmount;
     let totalSumAsString = JSON.stringify(totalSum);
     totalAmount.innerHTML=totalSumAsString+" "+"kr";
+    totalAmount.className="product__sum";
     productContainer.appendChild(totalAmount);
     amountInput.addEventListener("change",()=>{
       let sum:number = retrievedObject[i].amount;

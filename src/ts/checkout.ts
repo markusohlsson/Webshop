@@ -34,46 +34,42 @@ function test() {
     console.log(retrievedObject);
   }
 
+  // måste ändra till engelskt namn på listan //
+
   for (let i = 0; i < nylista.length; i++) {
-    let productDiv: HTMLDivElement = document.createElement("div");
+    // let productsContainer = document.createElement("div");
     let productContainer = document.createElement("div");
     let title: HTMLHeadingElement = document.createElement("h3");
     let imageContainer: HTMLDivElement = document.createElement("div");
     let image: HTMLImageElement = document.createElement("img");
     let price: HTMLParagraphElement = document.createElement("p");
-    let description: HTMLParagraphElement = document.createElement("p");
     let amountInput: HTMLInputElement = document.createElement("input");
 
-    productsContainer.className = "productsContainer";
-    productDiv.className = "product";
+    // productsContainer.className = "productsContainer";
     productContainer.className = "product" + "__" + retrievedObject[i].id;
+    productContainer.id = "pCId";
     title.className = "product__title";
     imageContainer.className = "product__imageContainer";
     image.className = "product__imageContainer__img";
     price.className = "product__price";
-    description.className = "product__description";
     amountInput.type = "number";
     amountInput.value = retrievedObject[i].amount;
-    cartButton.innerHTML = "Gå till kassan";
     amountInput.max = "10";
     amountInput.min = "1";
+    amountInput.className = "product__amountInput";
 
     // let amount:number = amountInput.valueAsNumber;
 
     title.innerHTML = retrievedObject[i].title;
     price.innerHTML = retrievedObject[i].price + " " + "kr"; // måste göra om till number sen
-    description.innerHTML = retrievedObject[i].description;
-
-    productContainer.appendChild(title);
 
     productContainer.appendChild(imageContainer);
     imageContainer.appendChild(image);
-    productContainer.appendChild(description);
+    productContainer.appendChild(title);
     productContainer.appendChild(price);
     productContainer.appendChild(amountInput);
-    productDiv.appendChild(productContainer);
-    productsContainer.appendChild(productDiv);
-    checkoutContainer.appendChild(productsContainer);
+    // productsContainer.appendChild(productContainer);
+    checkoutContainer.appendChild(productContainer);
 
     amountInput.addEventListener("input", () => {
       if (retrievedObject[i].amount < amountInput.value) {

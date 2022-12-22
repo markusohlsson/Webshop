@@ -150,6 +150,9 @@
             // justify-content: center;
             // width: 100px; 
             // align-items: center;
+        text-align: center;
+        border:0;
+        font-size:20px;
         }
     }
 
@@ -176,4 +179,10 @@
         cursor: pointer;
         font-size: larger;
     }
+    
+    input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+
+   opacity: 1;
+}
 }

@@ -24,7 +24,30 @@ let title: HTMLHeadingElement = document.createElement(
   "h3"
 ) as HTMLHeadingElement;
 title.innerHTML = "Varukorg";
+
+// rubrikraden //
+
+let tHeader: HTMLDivElement = document.createElement("div") as HTMLDivElement;
+let tPrice: HTMLDivElement = document.createElement("div") as HTMLDivElement;
+let tAmount: HTMLDivElement = document.createElement("div") as HTMLDivElement;
+let tSum: HTMLDivElement = document.createElement("div") as HTMLDivElement;
+
+tHeader.className = "tHeader";
+tPrice.className = "tHeader__tPrice";
+tAmount.className = "tHeader__tAmount";
+tSum.className = "tHeader__tSum";
+
+tPrice.innerHTML = "Á-pris";
+tAmount.innerHTML = "Antal";
+tSum.innerHTML = "Summa";
+
+tHeader.appendChild(tPrice);
+tHeader.appendChild(tAmount);
+tHeader.appendChild(tSum);
+
 shoppingCartContainer.appendChild(title);
+shoppingCartContainer.appendChild(tHeader);
+
 let aTag: HTMLAnchorElement = document.createElement("a");
 aTag.href = "../pages/checkout.html";
 aTag.appendChild(cartButton);
@@ -83,26 +106,24 @@ function test() {
     // productDiv.appendChild(productContainer);
     shoppingCartContainer.appendChild(productContainer);
 
-
-    // Testar lite 
+    // Testar lite
     let totalAmount = document.createElement("p");
     let sum = retrievedObject[i].amount;
     let sumAmount = retrievedObject[i].price;
-    let totalSum = sum*sumAmount;
+    let totalSum = sum * sumAmount;
     let totalSumAsString = JSON.stringify(totalSum);
-    totalAmount.innerHTML=totalSumAsString+" "+"kr";
-    totalAmount.className="product__sum";
+    totalAmount.innerHTML = totalSumAsString + " " + "kr";
+    totalAmount.className = "product__sum";
     productContainer.appendChild(totalAmount);
-    amountInput.addEventListener("change",()=>{
-      let sum:number = retrievedObject[i].amount;
-      let sumAmount:number = retrievedObject[i].price;
-      let totalSum:number = sum*sumAmount;
-      let totalSumAsString:string = JSON.stringify(totalSum);
-      totalAmount.innerHTML=totalSumAsString+" "+"kr";
+    amountInput.addEventListener("change", () => {
+      let sum: number = retrievedObject[i].amount;
+      let sumAmount: number = retrievedObject[i].price;
+      let totalSum: number = sum * sumAmount;
+      let totalSumAsString: string = JSON.stringify(totalSum);
+      totalAmount.innerHTML = totalSumAsString + " " + "kr";
       console.log(totalSumAsString);
-    })
-    
-    
+    });
+
     amountInput.addEventListener("input", () => {
       if (retrievedObject[i].amount < amountInput.value) {
         retrievedObject[i].amount++;
@@ -112,11 +133,8 @@ function test() {
       localStorage.setItem("cartList", JSON.stringify(retrievedObject));
       console.log(retrievedObject[i].amount);
     });
-
   }
   shoppingCartContainer.appendChild(aTag);
-
 }
-
 
 test();

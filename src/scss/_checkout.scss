@@ -4,139 +4,180 @@
     color:v.$sixthcolor;
     cursor: pointer;
 }
+
 #checkoutContainer{
+    h3 {
+        margin-left: 25px; 
+     }
+ 
+     #pCId {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         padding: 10px;
+         margin-top: 10px;
+ 
+         @include m.desktop {
+             flex-direction: row;
+             justify-content: left;
+             gap: 30px;
+             padding: 0px;
+         }
+     }
+ 
+     #arrowLink {
+         display: flex;
+         justify-content: left;
+         // färg etc
+         cursor: pointer;
+         text-decoration: none;
+         color: black;
+         
+         i{
+             display: flex;
+             font-size: 20px;
+             height: 30px;
+             justify-content: left;
+             margin-top: 10px;
+             margin-left: 10px;
+ 
+             @include m.desktop {
+                 margin-left: 15px;
+             }
+         }
+ 
+         i:hover {
+             cursor: pointer;
+             font-size: 25px;
+         }
+     }
+ 
+     .product {
+ 
+             &__headcover1 {
+                 @include m.productPage(url("../assets/products/Headcover_1.jpg"));
+             }
+         
+             &__headcover2 {
+                 @include m.productPage(url("../assets/products/Headcover_2.jpg"));
+             }
+         
+             &__headcover3 {
+                 @include m.productPage(url("../assets/products/Headcover_3.jpg"));
+             }
+         
+             &__proFliHi {
+                 @include m.productPage(url("../assets/products/Pro_Fli_Hi.jpg"));
+             }
+         
+             &__stealthUDI {
+                 @include m.productPage(url("../assets/products/Stealth_UDI.png"));
+             }
+         
+             &__u510 {
+                 @include m.productPage(url("../assets/products/U510.jpg"));
+             }
+         
+             &__tp5Pop {
+                 @include m.productPage(url("../assets/products/TP5_PIX_ROCKET_POP.jpg"));
+             }
+         
+             &__tp5Sushi {
+                 @include m.productPage(url("../assets/products/TP5_PIX_SUSHI.jpg"));
+             }
+         
+             &__tp5Spider {
+                 @include m.productPage(url("../assets/products/TP5_PIX_SPIDER.jpg"));
+             }
+ 
+         &__imageContainer {
+             display: flex;
+             justify-content: center;
+ 
+             @include m.desktop {
+                 justify-content: left;
+                 margin-left: 25px;
+             }
+ 
+             &__img {
+                 height: 50px;
+                 width: 50px;
+ 
+                 @include m.desktop {
+                     width: 50px;
+                     height: 50px;
+                     display: flex;
+                     justify-content: left;
+                     background-repeat: no-repeat;
+                 }
+             } 
+         }   
+ 
+         &__title {
+             font-size: 15px;
+             text-align: center;
+             // justify-content: center;
+             margin: 0px;               
+             margin-bottom: 5px;
+ 
+             @include m.desktop {
+                 margin: 0px;
+                 width: 200px;
+                 text-align: left;
+             }
+             
+         }
+     
+         &__price {
+             font-size: 15px;
+             text-align: center;
+             // display: flex;
+             // justify-content: center;
+             margin: 0px;
+             margin-top: 5px;
+ 
+             @include m.desktop {
+                 margin: 0px;
+                 width: 200px;
+                 text-align: right;
+             }
+         }
+ 
+         &__amountInput{
+             // display: flex;
+             // justify-content: center;
+             // width: 100px; 
+             // align-items: center;
+         }
+     }
+ 
+     button {
+         display: block;
+         position: relative;
+         height: 75px;
+         width: 100%;
+         margin: 0;
+         background-color: v.$fifthcolor;
+         color: white;
+         font-size: large;
+ 
+         @include m.desktop {
+             height: 75px; 
+             width: 350px;   
+             bottom: 25px;
+             position: fixed;
+             right: 25px;    
+         }
+     }
+ 
+     button:hover {
+         cursor: pointer;
+         font-size: larger;
+     }
+ 
 
-    #arrowLink {
-        display: flex;
-        justify-content: left;
-        // färg etc
-        cursor: pointer;
-        text-decoration: none;
-        color: black;
-        
-        i{
-            display: flex;
-            font-size: 20px;
-            height: 30px;
-            justify-content: left;
-            margin-top: 10px;
-            margin-left: 10px;
 
-            @include m.desktop {
-                margin-left: 25px;
-            }
-        }
-
-        i:hover {
-            cursor: pointer;
-            font-size: 25px;
-        }
-    }
-
-    .productsContainer{
-        display: flex;
-        flex-direction: column;
-    .product {
-        width: 300px;
-        border: 1px solid gray;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 10px;
-        margin-top: 10px;
-        background-color: rgb(243, 243, 243);
-        flex-direction: row;
-        @include m.desktop {
-            // width: 300px;
-        }
-
-
-        &__title {
-            font-size: 20px;
-            text-align: center;
-            margin: 0px;
-            margin-bottom: 5px;
-        }
-
-        &__price {
-            font-size: 20px;
-            text-align: center;
-            margin: 0px;
-            margin-top: 5px;
-        }
-        
-
-        &__headcover1 {
-            
-            @include m.product(url("../assets/products/Headcover_1.jpg"));
-
-        }
-
-        &__headcover2 {
-            @include m.product(url("../assets/products/Headcover_2.jpg"));
-        }
-
-        &__headcover3 {
-            @include m.product(url("../assets/products/Headcover_3.jpg"));
-        }
-
-        &__proFliHi {
-            @include m.product(url("../assets/products/Pro_Fli_Hi.jpg"));
-        }
-
-        &__stealthUDI {
-            @include m.product(url("../assets/products/Stealth_UDI.png"));
-        }
-
-        &__u510 {
-            @include m.product(url("../assets/products/U510.jpg"));
-        }
-
-        &__tp5Pop {
-            @include m.product(url("../assets/products/TP5_PIX_ROCKET_POP.jpg"));
-        }
-
-        &__tp5Sushi {
-            @include m.product(url("../assets/products/TP5_PIX_SUSHI.jpg"));
-        }
-
-        &__tp5Spider {
-            @include m.product(url("../assets/products/TP5_PIX_SPIDER.jpg"));
-        }
-
-        &__description {
-            display: none;
-        }
-
-        input {
-            width:40px;
-            font-size:20px;
-            border:0;
-            background-color: rgb(243, 243, 243);
-
-        }
-
-        // button {
-        //     display: none;
-        // }
-
-        #buttonMore {
-            display: flex;
-        } 
-    }
-
-    .product:hover {
-        cursor: pointer;
-        border: 3px solid gray;
-    }
-    .product__imageContainer{
-    .product__imageContainer__img{
-        height:100px;
-        width:100px;
-        align-items:flex-start;
-    }
-}
-}
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button {  
 
@@ -145,6 +186,7 @@ input[type=number]::-webkit-outer-spin-button {
 .formContainer{
     display: flex;
     width:100%;
+    
     form{
         width:100%;
         align-items: center;

@@ -1,11 +1,11 @@
 import { Product } from "./models/Product";
 
-// Krysset //
+// Pilen //
 
-let xxxx: Element = document.getElementById("xxxx") as HTMLElement;
-let aStartpage: HTMLAnchorElement = document.createElement("a");
-aStartpage.href = "../index.html#productsContainer";
-xxxx.appendChild(aStartpage);
+// let arrow: Element = document.getElementById("arrow") as HTMLElement;
+// let aStartpage: HTMLAnchorElement = document.createElement("a");
+// aStartpage.href = "../index.html#productsContainer";
+// arrow.appendChild(aStartpage);
 
 // hämta från LS //
 let testListString: string = localStorage.getItem("savedProductList") || "";

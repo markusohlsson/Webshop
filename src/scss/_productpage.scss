@@ -11,9 +11,9 @@
     @include m.desktop {
     }
 
-    a{
+    #arrowLink {
         display: flex;
-        justify-content: right;
+        justify-content: left;
         // färg etc
         cursor: pointer;
         text-decoration: none;
@@ -23,9 +23,13 @@
             display: flex;
             font-size: 20px;
             height: 30px;
-            justify-content: right;
+            justify-content: left;
             margin-top: 10px;
-            margin-right: 10px;
+            margin-left: 10px;
+
+            @include m.desktop {
+                margin-left: 25px;
+            }
         }
 
         i:hover {

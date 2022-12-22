@@ -5,6 +5,34 @@
     cursor: pointer;
 }
 #checkoutContainer{
+
+    #arrowLink {
+        display: flex;
+        justify-content: left;
+        // färg etc
+        cursor: pointer;
+        text-decoration: none;
+        color: black;
+        
+        i{
+            display: flex;
+            font-size: 20px;
+            height: 30px;
+            justify-content: left;
+            margin-top: 10px;
+            margin-left: 10px;
+
+            @include m.desktop {
+                margin-left: 25px;
+            }
+        }
+
+        i:hover {
+            cursor: pointer;
+            font-size: 25px;
+        }
+    }
+
     .productsContainer{
         display: flex;
         flex-direction: column;

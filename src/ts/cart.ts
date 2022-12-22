@@ -7,6 +7,13 @@ hamburgericon?.addEventListener("click", function (event) {
   hamburgermenu();
 });
 
+// pilen //
+
+// let arrow: Element = document.getElementById("arrow") as HTMLElement;
+// let aStartpage: HTMLAnchorElement = document.createElement("a");
+// aStartpage.href = "../index.html#productsContainer";
+// arrow.appendChild(aStartpage);
+
 // Products
 
 let shoppingCartContainer: HTMLDivElement = document.getElementById(

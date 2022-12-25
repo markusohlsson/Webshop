@@ -106,13 +106,13 @@ function collectFromLS() {
     // totale
     totale.innerHTML=JSON.stringify(totalsumma);
     totaleT.innerHTML="Totalsumma:";
-    totaleK.innerHTML="Kr";
+    totaleK.innerHTML=" Kr";
     totaleC.appendChild(totaleT)
-    totaleT.appendChild(totale);
-    totaleT.appendChild(totaleK);
+    totaleC.appendChild(totale);
+    totale.appendChild(totaleK);
 
     amountInput.addEventListener("change",()=>{
-    
+      location.reload();
       sum= retrievedObject[i].amount;
       sumAmount = retrievedObject[i].price;
       totalSum= sum*sumAmount;
@@ -123,13 +123,9 @@ function collectFromLS() {
       console.log(totalSumAsString);
       totale.innerHTML=JSON.stringify(totalsumma);
       totaleC.appendChild(totaleT)
-      totaleT.appendChild(totale);
-      totaleT.appendChild(totaleK);
-    
+      totaleC.appendChild(totale);
+      totale.appendChild(totaleK);
     })  
-
-
-
 
     amountInput.addEventListener("input", () => {
       if (retrievedObject[i].amount < amountInput.value) {

@@ -99,11 +99,11 @@ function collectFromLS() {
     totalAmount.innerHTML=totalSumAsString
     totalAmount.className="product__sum";
     totalAmount.id="product__sum";
-    totalAmountSek.innerHTML="Kr"
+    totalAmountSek.innerHTML=" Kr"
     totalAmount.appendChild(totalAmountSek)
     productContainer.appendChild(totalAmount);
 
-    //
+    // totale
     totale.innerHTML=JSON.stringify(totalsumma);
     totaleT.innerHTML="Totalsumma:";
     totaleK.innerHTML="Kr";
@@ -112,6 +112,7 @@ function collectFromLS() {
     totaleT.appendChild(totaleK);
 
     amountInput.addEventListener("change",()=>{
+    
       sum= retrievedObject[i].amount;
       sumAmount = retrievedObject[i].price;
       totalSum= sum*sumAmount;
@@ -124,7 +125,7 @@ function collectFromLS() {
       totaleC.appendChild(totaleT)
       totaleT.appendChild(totale);
       totaleT.appendChild(totaleK);
-
+    
     })  
 
 

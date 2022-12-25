@@ -19,24 +19,27 @@ let aTag: HTMLAnchorElement = document.createElement("a");
 aTag.href = "../pages/checkout.html";
 aTag.appendChild(cartButton);
 
-// let arrow:HTMLElement = document.createElement("i");
-// let arrowlink:HTMLAnchorElement = document.createElement("a");
-// arrow.className="fa-solid fa-arrow-left";
-// arrowlink.href="../pages/cart.html";
-// arrowlink.appendChild(arrow);
-// checkoutContainer.appendChild(arrowlink);
 
-function test() {
+
+// Rensa varukorg
+let clearCart = document.createElement("button");
+clearCart.innerHTML="Rensa Varukorg";
+
+clearCart.addEventListener("click",()=>{
+  localStorage.removeItem("cartList");
+  window.location.reload()
+})
+
+function collectFromLS() {
   var retrievedObject = JSON.parse(localStorage.getItem("cartList") || "");
-  let nylista: any[] = [];
+  let newList: any[] = [];
   for (let i = 0; i < retrievedObject.length; i++) {
-    nylista.push(retrievedObject);
+    newList.push(retrievedObject);
     console.log(retrievedObject);
   }
 
-  // måste ändra till engelskt namn på listan //
 
-  for (let i = 0; i < nylista.length; i++) {
+  for (let i = 0; i < newList.length; i++) {
     // let productsContainer = document.createElement("div");
     let productContainer = document.createElement("div");
     let title: HTMLHeadingElement = document.createElement("h3");
@@ -70,6 +73,7 @@ function test() {
     productContainer.appendChild(amountInput);
     // productsContainer.appendChild(productContainer);
     checkoutContainer.appendChild(productContainer);
+    
 
       // Testar lite 
       let totalAmount = document.createElement("p");
@@ -101,7 +105,7 @@ function test() {
   }
 }
 
-test();
+collectFromLS();
 
 // Shopping Cart
 let cartFormContainer: HTMLDivElement = document.getElementById(
@@ -321,18 +325,31 @@ inputForPaymentTwo.id = "paymentTwo";
 button.innerHTML = "Slutför Köp";
 button.type = "submit";
 
+
+
 // Tack för ditt köp Test
 let testp: HTMLParagraphElement = document.createElement(
   "p"
 ) as HTMLParagraphElement;
 let x = inputforFirstname.value;
 testp.innerHTML = "Tack för ditt köp" + x + "!";
+let c = document.createElement("button") as HTMLButtonElement;
+c.innerHTML="Återgå till startsidan";
+let aTag2=document.createElement("a");
+aTag2.href="../index.html";
+aTag2.appendChild(c);
 
 //
 
+
+
 form.addEventListener("submit", function (event) {
   event.preventDefault();
+  localStorage.removeItem("cartList");
   checkoutContainer.innerHTML = "";
   cartFormContainer.appendChild(testp);
+  cartFormContainer.appendChild(aTag2);
 });
 Checkout();
+
+checkoutContainer.appendChild(clearCart);

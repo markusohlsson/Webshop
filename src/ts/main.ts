@@ -3,22 +3,10 @@ import { aboutus } from "./services/aboutService";
 import { contactus } from "./services/contactService";
 import { hamburgermenu, hamburgericon } from "./services/headerService";
 
-import {
-  balls,
-  clubs,
-  createHTMLForProduct,
-  headcovers,
-  productList,
-} from "./services/productService";
-import { shoppingCart } from "./services/shoppingCartService";
+import { createHTMLForProduct, productList } from "./services/productService";
+// import { shoppingCart } from "./services/shoppingCartService";
 
 createHTMLForProduct(productList);
-
-// fixa iordning med addevent (till kategorierna) //
-
-// createHTMLForProduct(headcovers);
-// createHTMLForProduct(clubs);
-// createHTMLForProduct(balls);
 
 // Hamburger
 

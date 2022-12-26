@@ -155,7 +155,7 @@
          }
      }
  
-     button {
+     #purchaseButton {
          display: block;
          position: relative;
          height: 75px;
@@ -174,7 +174,7 @@
          }
      }
  
-     button:hover {
+     #purchaseButton:hover {
          cursor: pointer;
          font-size: larger;
      }

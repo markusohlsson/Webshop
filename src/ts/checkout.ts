@@ -1,39 +1,28 @@
-import { hamburgermenu, hamburgericon } from "./services/headerService";
-// Hamburger
-
-hamburgericon?.addEventListener("click", function (event) {
-  hamburgermenu();
-});
-
 let checkoutContainer: HTMLDivElement = document.getElementById(
   "checkoutContainer"
 ) as HTMLDivElement;
-let productsContainer: HTMLDivElement = document.createElement("div");
-let cartButton: HTMLButtonElement = document.createElement("button");
-let title2: HTMLHeadingElement = document.createElement(
+let titleForCheckout: HTMLHeadingElement = document.createElement(
   "h3"
 ) as HTMLHeadingElement;
-title2.innerHTML = "Kassa";
-checkoutContainer.appendChild(title2);
-let aTag: HTMLAnchorElement = document.createElement("a");
-aTag.href = "../pages/checkout.html";
-aTag.appendChild(cartButton);
+titleForCheckout.innerHTML = "Kassa";
+checkoutContainer.appendChild(titleForCheckout);
+
 
 
 
 
 
 // Totalsumma 
-let totalsumma=0;
-let totaleC = document.createElement("div") as HTMLDivElement;
-let totaleT = document.createElement("h3") as HTMLHeadingElement;
-let totale = document.createElement("p") as HTMLParagraphElement;
-let totaleK = document.createElement("span") as HTMLSpanElement;
-totale.id="";
+let totalAmountForAll=0;
+let totalAmountForAllContainer = document.createElement("div") as HTMLDivElement;
+let totalAmountForAllTitle = document.createElement("h3") as HTMLHeadingElement;
+let totalAmountForAllAmount = document.createElement("p") as HTMLParagraphElement;
+let totalAmountForAllKr = document.createElement("span") as HTMLSpanElement;
+totalAmountForAllAmount.id="";
 
 function collectFromLS() {
   var retrievedObject = JSON.parse(localStorage.getItem("cartList") || "");
-  let newList: any[] = [];
+  let newList = [];
   for (let i = 0; i < retrievedObject.length; i++) {
     newList.push(retrievedObject);
     console.log(retrievedObject);
@@ -41,7 +30,6 @@ function collectFromLS() {
 
 
   for (let i = 0; i < newList.length; i++) {
-    // let productsContainer = document.createElement("div");
     let productContainer = document.createElement("div");
     let title: HTMLHeadingElement = document.createElement("h3");
     let imageContainer: HTMLDivElement = document.createElement("div");
@@ -49,7 +37,7 @@ function collectFromLS() {
     let price: HTMLParagraphElement = document.createElement("p");
     let amountInput: HTMLInputElement = document.createElement("input");
 
-    // productsContainer.className = "productsContainer";
+
     productContainer.className = "product" + "__" + retrievedObject[i].id;
     productContainer.id = "pCId";
     title.className = "product__title";
@@ -62,42 +50,41 @@ function collectFromLS() {
     amountInput.min = "1";
     amountInput.className = "product__amountInput";
 
-    // let amount:number = amountInput.valueAsNumber;
+
 
     title.innerHTML = retrievedObject[i].title;
-    price.innerHTML = retrievedObject[i].price + " " + "kr"; // måste göra om till number sen
+    price.innerHTML = retrievedObject[i].price + " " + "kr"; 
 
     productContainer.appendChild(imageContainer);
     imageContainer.appendChild(image);
     productContainer.appendChild(title);
     productContainer.appendChild(price);
     productContainer.appendChild(amountInput);
-    // productsContainer.appendChild(productContainer);
     checkoutContainer.appendChild(productContainer);
     
 
     // Totalpris per produkt
-    let totalAmount = document.createElement("p");
-    let totalAmountSek = document.createElement("span");
+    let totalAmountPerProduct = document.createElement("p");
+    let totalAmountPerProductSek = document.createElement("span");
     let sum:number = retrievedObject[i].amount;
     let sumAmount:number = retrievedObject[i].price;
     let totalSum:number = sum*sumAmount;
     let totalSumAsString:string = JSON.stringify(totalSum);
-    totalsumma +=totalSum;
-    totalAmount.innerHTML=totalSumAsString
-    totalAmount.className="product__sum";
-    totalAmount.id="product__sum";
-    totalAmountSek.innerHTML=" Kr"
-    totalAmount.appendChild(totalAmountSek)
-    productContainer.appendChild(totalAmount);
+    totalAmountForAll +=totalSum;
+    totalAmountPerProduct.innerHTML=totalSumAsString
+    totalAmountPerProduct.className="product__sum";
+    totalAmountPerProduct.id="product__sum";
+    totalAmountPerProductSek.innerHTML=" kr"
+    totalAmountPerProduct.appendChild(totalAmountPerProductSek)
+    productContainer.appendChild(totalAmountPerProduct);
 
     // totalsumma
-    totale.innerHTML=JSON.stringify(totalsumma);
-    totaleT.innerHTML="Totalsumma:";
-    totaleK.innerHTML=" Kr";
-    totaleC.appendChild(totaleT)
-    totaleC.appendChild(totale);
-    totale.appendChild(totaleK);
+    totalAmountForAllAmount.innerHTML=JSON.stringify(totalAmountForAll);
+    totalAmountForAllTitle.innerHTML="Totalsumma:";
+    totalAmountForAllKr.innerHTML=" kr";
+    totalAmountForAllContainer.appendChild(totalAmountForAllTitle)
+    totalAmountForAllContainer.appendChild(totalAmountForAllAmount);
+    totalAmountForAllAmount.appendChild(totalAmountForAllKr);
 
     amountInput.addEventListener("change",()=>{
       location.reload();
@@ -105,13 +92,13 @@ function collectFromLS() {
       sumAmount = retrievedObject[i].price;
       totalSum= sum*sumAmount;
       totalSumAsString= JSON.stringify(totalSum);
-      totalAmount.innerHTML=totalSumAsString
-      totalAmount.appendChild(totalAmountSek)
+      totalAmountPerProduct.innerHTML=totalSumAsString
+      totalAmountPerProduct.appendChild(totalAmountPerProductSek)
       console.log(totalSumAsString);
-      totale.innerHTML=JSON.stringify(totalsumma);
-      totaleC.appendChild(totaleT)
-      totaleC.appendChild(totale);
-      totale.appendChild(totaleK);
+      totalAmountForAllAmount.innerHTML=JSON.stringify(totalAmountForAll);
+      totalAmountForAllContainer.appendChild(totalAmountForAllTitle)
+      totalAmountForAllContainer.appendChild(totalAmountForAllAmount);
+      totalAmountForAllAmount.appendChild(totalAmountForAllKr);
     });
 
     amountInput.addEventListener("input", () => {
@@ -127,7 +114,8 @@ function collectFromLS() {
 }
 
 collectFromLS();
-checkoutContainer.appendChild(totaleC);
+checkoutContainer.appendChild(totalAmountForAllContainer);
+
 // Shopping Cart
 let cartFormContainer: HTMLDivElement = document.getElementById(
   "checkoutContainer"
@@ -160,12 +148,17 @@ export function Checkout() {
   form.appendChild(labelForPostAddress);
   form.appendChild(inputForPostAddress);
   form.appendChild(labelForDeliverySection);
-  form.appendChild(inputForDeliveryOne);
-  form.appendChild(inputForDeliveryTwo);
-  form.appendChild(inputForDeliveryThree);
+  form.appendChild(labelForDeliveryOne);
+  labelForDeliveryOne.appendChild(inputForDeliveryOne);
+  form.appendChild(labelForDeliveryTwo);
+  labelForDeliveryTwo.appendChild(inputForDeliveryTwo);
+  form.appendChild(labelForDeliveryThree);
+  labelForDeliveryThree.appendChild(inputForDeliveryThree);
   form.appendChild(labelForPaymentSection);
-  form.appendChild(inputForPaymentOne);
-  form.appendChild(inputForPaymentTwo);
+  form.appendChild(labelForPaymentOne);
+  labelForPaymentOne.appendChild(inputForPaymentOne);
+  form.appendChild(labelForPaymentTwo);
+  labelForPaymentTwo.appendChild(inputForPaymentTwo);
   form.appendChild(button);
 }
 
@@ -223,12 +216,15 @@ let inputForPostAddress: HTMLInputElement = document.createElement(
 let labelForDeliverySection: HTMLLabelElement = document.createElement(
   "label"
 ) as HTMLLabelElement;
+let labelForDeliveryOne: HTMLLabelElement = document.createElement("label") as HTMLLabelElement;
 let inputForDeliveryOne: HTMLInputElement = document.createElement(
   "input"
 ) as HTMLInputElement;
+let labelForDeliveryTwo: HTMLLabelElement = document.createElement("label") as HTMLLabelElement;
 let inputForDeliveryTwo: HTMLInputElement = document.createElement(
   "input"
 ) as HTMLInputElement;
+let labelForDeliveryThree: HTMLLabelElement = document.createElement("label") as HTMLLabelElement;
 let inputForDeliveryThree: HTMLInputElement = document.createElement(
   "input"
 ) as HTMLInputElement;
@@ -237,9 +233,11 @@ let inputForDeliveryThree: HTMLInputElement = document.createElement(
 let labelForPaymentSection: HTMLLabelElement = document.createElement(
   "label"
 ) as HTMLLabelElement;
+let labelForPaymentOne: HTMLLabelElement = document.createElement("label") as HTMLLabelElement;
 let inputForPaymentOne: HTMLInputElement = document.createElement(
   "input"
 ) as HTMLInputElement;
+let labelForPaymentTwo: HTMLLabelElement = document.createElement("label") as HTMLLabelElement;
 let inputForPaymentTwo: HTMLInputElement = document.createElement(
   "input"
 ) as HTMLInputElement;
@@ -320,14 +318,20 @@ labelForDeliverySection.htmlFor = "delivery";
 inputForDeliveryOne.type = "radio";
 inputForDeliveryOne.name = "delivery";
 inputForDeliveryOne.id = "deliveryOne";
+labelForDeliveryOne.htmlFor="deliveryOne";
+labelForDeliveryOne.innerHTML="PostNord";
 // Delivery 2
 inputForDeliveryTwo.type = "radio";
 inputForDeliveryTwo.name = "delivery";
 inputForDeliveryTwo.id = "deliveryTwo";
+labelForDeliveryTwo.htmlFor="deliveryOne";
+labelForDeliveryTwo.innerHTML="Instabox";
 // Delivery 3
 inputForDeliveryThree.type = "radio";
 inputForDeliveryThree.name = "delivery";
 inputForDeliveryThree.id = "deliveryThree";
+labelForDeliveryThree.htmlFor="deliveryOne";
+labelForDeliveryThree.innerHTML="Budbee";
 
 // Payment
 labelForPaymentSection.innerHTML = "Betalningsmetod";
@@ -337,38 +341,42 @@ labelForPaymentSection.htmlFor = "payment";
 inputForPaymentOne.type = "radio";
 inputForPaymentOne.name = "payment";
 inputForPaymentOne.id = "paymentOne";
+labelForPaymentOne.htmlFor="paymentOne";
+labelForPaymentOne.innerHTML="Swish";
 // Payment 2
 inputForPaymentTwo.type = "radio";
 inputForPaymentTwo.name = "payment";
 inputForPaymentTwo.id = "paymentTwo";
+labelForPaymentTwo.htmlFor="paymentTwo";
+labelForPaymentTwo.innerHTML="Kort";
 
 // Send
 button.innerHTML = "Slutför Köp";
 button.type = "submit";
+button.id="purchaseButton";
 
 
 
-// Tack för ditt köp Test
-let testp: HTMLParagraphElement = document.createElement(
-  "p"
-) as HTMLParagraphElement;
-let x = inputforFirstname.value;
-testp.innerHTML = "Tack för ditt köp" + x + "!";
-let c = document.createElement("button") as HTMLButtonElement;
-c.innerHTML="Återgå till startsidan";
-let aTag2=document.createElement("a");
-aTag2.href="../index.html";
-aTag2.appendChild(c);
+// Tack för ditt köp 
+let thankYouTitle: HTMLHeadingElement = document.createElement(
+  "h3"
+) as HTMLHeadingElement;
+let thankYouParagraph: HTMLParagraphElement = document.createElement("p");
 
-//
-
+thankYouTitle.innerHTML = "Tack för ditt köp!";
+let backToStart = document.createElement("button") as HTMLButtonElement;
+backToStart.innerHTML="Återgå till startsidan";
+let backToStartLink=document.createElement("a");
+backToStartLink.href="../index.html";
+backToStartLink.appendChild(backToStart);
 
 
 form.addEventListener("submit", function (event) {
   event.preventDefault();
   localStorage.removeItem("cartList");
   checkoutContainer.innerHTML = "";
-  cartFormContainer.appendChild(testp);
-  cartFormContainer.appendChild(aTag2);
+  cartFormContainer.appendChild(thankYouTitle);
+  cartFormContainer.appendChild(thankYouParagraph);
+  cartFormContainer.appendChild(backToStartLink);
 });
 Checkout();

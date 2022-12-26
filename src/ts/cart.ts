@@ -1,11 +1,3 @@
-import { hamburgermenu, hamburgericon } from "./services/headerService";
-import { Product } from "./models/Product";
-import { productList } from "./services/productService";
-// Hamburger
-
-hamburgericon?.addEventListener("click", function (event) {
-  hamburgermenu();
-});
 
 // Products
 
@@ -56,12 +48,12 @@ clearCart.addEventListener("click",()=>{
 })
 
 // Totalsumma 
-let totalsumma=0;
-let totaleC = document.createElement("div") as HTMLDivElement;
-let totaleT = document.createElement("h3") as HTMLHeadingElement;
-let totale = document.createElement("p") as HTMLParagraphElement;
-let totaleK = document.createElement("span") as HTMLSpanElement;
-totale.id="";
+let totalAmountForAll=0;
+let totalAmountForAllContainer = document.createElement("div") as HTMLDivElement;
+let totalAmountForAllTitle = document.createElement("h3") as HTMLHeadingElement;
+let totalAmountForAllAmount = document.createElement("p") as HTMLParagraphElement;
+let totalAmountForAllKr = document.createElement("span") as HTMLSpanElement;
+totalAmountForAllAmount.id="";
 
 function collectFromLS() {
 
@@ -75,23 +67,19 @@ function collectFromLS() {
 
   for (let i = 0; i < newList.length; i++) {
     
-    // let productDiv: HTMLDivElement = document.createElement("div");
     let productContainer = document.createElement("div");
     let title: HTMLHeadingElement = document.createElement("h3");
     let imageContainer: HTMLDivElement = document.createElement("div");
     let image: HTMLImageElement = document.createElement("img");
     let price: HTMLParagraphElement = document.createElement("p");
-    // let description: HTMLParagraphElement = document.createElement("p");
     let amountInput: HTMLInputElement = document.createElement("input");
 
-    // productDiv.className = "product";
     productContainer.className = "product" + "__" + retrievedObject[i].id;
     productContainer.id = "pCId";
     title.className = "product__title";
     imageContainer.className = "product__imageContainer";
     image.className = "product__imageContainer__img";
     price.className = "product__price";
-    // description.className = "product__description";
     amountInput.className = "product__amountInput";
     amountInput.type = "number";
     amountInput.value = retrievedObject[i].amount;
@@ -102,19 +90,15 @@ function collectFromLS() {
     cartButton.innerHTML = "Gå till kassan";
 
 
-    // let amount:number = amountInput.valueAsNumber;
 
     title.innerHTML = retrievedObject[i].title;
-    price.innerHTML = retrievedObject[i].price + " " + "kr"; // måste göra om till number sen
-    // description.innerHTML = retrievedObject[i].description;
+    price.innerHTML = retrievedObject[i].price + " " + "kr"; 
 
     productContainer.appendChild(imageContainer);
     imageContainer.appendChild(image);
     productContainer.appendChild(title);
-    // productContainer.appendChild(description);
     productContainer.appendChild(price);
     productContainer.appendChild(amountInput);
-    // productDiv.appendChild(productContainer);
     shoppingCartContainer.appendChild(productContainer);
 
 
@@ -126,21 +110,21 @@ function collectFromLS() {
     let sumAmount:number = retrievedObject[i].price;
     let totalSum:number = sum*sumAmount;
     let totalSumAsString:string = JSON.stringify(totalSum);
-    totalsumma +=totalSum;
+    totalAmountForAll +=totalSum;
     totalAmount.innerHTML=totalSumAsString
     totalAmount.className="product__sum";
     totalAmount.id="product__sum";
-    totalAmountSek.innerHTML=" Kr"
+    totalAmountSek.innerHTML=" kr"
     totalAmount.appendChild(totalAmountSek)
     productContainer.appendChild(totalAmount);
 
     // totalsumma
-    totale.innerHTML=JSON.stringify(totalsumma);
-    totaleT.innerHTML="Totalsumma:";
-    totaleK.innerHTML=" Kr";
-    totaleC.appendChild(totaleT)
-    totaleC.appendChild(totale);
-    totale.appendChild(totaleK);
+    totalAmountForAllAmount.innerHTML=JSON.stringify(totalAmountForAll);
+    totalAmountForAllTitle.innerHTML="Totalsumma:";
+    totalAmountForAllKr.innerHTML=" kr";
+    totalAmountForAllContainer.appendChild(totalAmountForAllTitle)
+    totalAmountForAllContainer.appendChild(totalAmountForAllAmount);
+    totalAmountForAllAmount.appendChild(totalAmountForAllKr);
 
     amountInput.addEventListener("change",()=>{
       location.reload();
@@ -151,10 +135,10 @@ function collectFromLS() {
       totalAmount.innerHTML=totalSumAsString
       totalAmount.appendChild(totalAmountSek)
       console.log(totalSumAsString);
-      totale.innerHTML=JSON.stringify(totalsumma);
-      totaleC.appendChild(totaleT)
-      totaleC.appendChild(totale);
-      totale.appendChild(totaleK);
+      totalAmountForAllAmount.innerHTML=JSON.stringify(totalAmountForAll);
+      totalAmountForAllContainer.appendChild(totalAmountForAllTitle)
+      totalAmountForAllContainer.appendChild(totalAmountForAllAmount);
+      totalAmountForAllAmount.appendChild(totalAmountForAllKr);
     });
 
     amountInput.addEventListener("input", () => {
@@ -170,7 +154,7 @@ function collectFromLS() {
  
   shoppingCartContainer.appendChild(aTag);
   shoppingCartContainer.appendChild(clearCart);
-  shoppingCartContainer.appendChild(totaleC);
+  shoppingCartContainer.appendChild(totalAmountForAllContainer);
 
 }
 

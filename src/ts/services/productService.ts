@@ -192,3 +192,57 @@ export function createHTMLForProduct(products: Product[]) {
     });
   }
 }
+
+/*Kategorierna*/
+
+let allProductsLink: HTMLLIElement = document.getElementById(
+  "allProductsLink"
+) as HTMLLIElement;
+
+allProductsLink.addEventListener("click", () => {
+  bigContainer.innerHTML = "";
+  let headingAllProducts: HTMLHeadingElement = document.createElement("h2");
+  headingAllProducts.innerHTML = "Alla produkter";
+  bigContainer.appendChild(headingAllProducts);
+  headingAllProducts.className = "headingProducts";
+  createHTMLForProduct(productList);
+});
+
+let clubsLink: HTMLLIElement = document.getElementById(
+  "clubsLink"
+) as HTMLLIElement;
+
+clubsLink.addEventListener("click", () => {
+  bigContainer.innerHTML = "";
+  let headingClubs: HTMLHeadingElement = document.createElement("h2");
+  headingClubs.innerHTML = "Golfklubbor";
+  bigContainer.appendChild(headingClubs);
+  headingClubs.className = "headingProducts";
+  createHTMLForProduct(clubs);
+});
+
+let headcoversLink: HTMLLIElement = document.getElementById(
+  "headcoversLink"
+) as HTMLLIElement;
+
+headcoversLink.addEventListener("click", () => {
+  bigContainer.innerHTML = "";
+  let headingHeadcovers: HTMLHeadingElement = document.createElement("h2");
+  headingHeadcovers.innerHTML = "Headcovers";
+  bigContainer.appendChild(headingHeadcovers);
+  headingHeadcovers.className = "headingProducts";
+  createHTMLForProduct(headcovers);
+});
+
+let ballsLink: HTMLLIElement = document.getElementById(
+  "ballsLink"
+) as HTMLLIElement;
+
+ballsLink.addEventListener("click", () => {
+  bigContainer.innerHTML = "";
+  let headingBalls: HTMLHeadingElement = document.createElement("h2");
+  headingBalls.innerHTML = "Golfbollar";
+  bigContainer.appendChild(headingBalls);
+  headingBalls.className = "headingProducts";
+  createHTMLForProduct(balls);
+});

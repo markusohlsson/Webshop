@@ -142,6 +142,7 @@ export function createHTMLForProduct(products: Product[]) {
     readMoreButton = document.createElement("button");
 
     let a: HTMLAnchorElement = document.createElement("a");
+    let a2: HTMLAnchorElement = document.createElement("a");
 
     productDiv.className = "product";
     productContainer.className = "product" + "__" + products[i].id;
@@ -156,6 +157,8 @@ export function createHTMLForProduct(products: Product[]) {
     // let amount:number = amountInput.valueAsNumber;
 
     a.href = "/pages/productpage.html";
+    a2.href = "/pages/productpage.html";
+    a2.id = "a2";
 
     title.innerHTML = products[i].title;
     price.innerHTML = products[i].price + " " + "kr"; // måste göra om till number sen
@@ -171,11 +174,18 @@ export function createHTMLForProduct(products: Product[]) {
     // productContainer.appendChild(amountInput);
     // productContainer.appendChild(addToCartButton);
     a.appendChild(readMoreButton);
+
+    productDiv.appendChild(a2);
+
     productContainer.appendChild(a);
 
     productDiv.appendChild(productContainer);
     bigContainer.appendChild(productDiv);
     // productPageContainer.appendChild(productDiv);
+
+    productDiv.addEventListener("click", () => {
+      localStorage.setItem("savedProductList", JSON.stringify(productList[i]));
+    });
 
     readMoreButton.addEventListener("click", () => {
       localStorage.setItem("savedProductList", JSON.stringify(productList[i]));

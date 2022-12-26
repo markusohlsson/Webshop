@@ -130,6 +130,7 @@ bigContainer.appendChild(headingAllProducts);
 headingAllProducts.className = "headingProducts"; //ändra namn//
 
 export function createHTMLForProduct(products: Product[]) {
+  bigContainer.innerHTML = "";
   for (let i: number = 0; i < products.length; i++) {
     let productDiv: HTMLDivElement = document.createElement("div");
     let productContainer: HTMLDivElement = document.createElement("div");
@@ -192,3 +193,37 @@ export function createHTMLForProduct(products: Product[]) {
     });
   }
 }
+
+/*Kategorierna*/
+
+let allProductsLink: HTMLLIElement = document.getElementById(
+  "allProductsLink"
+) as HTMLLIElement;
+
+allProductsLink.addEventListener("click", () => {
+  createHTMLForProduct(productList);
+});
+
+let clubsLink: HTMLLIElement = document.getElementById(
+  "clubsLink"
+) as HTMLLIElement;
+
+clubsLink.addEventListener("click", () => {
+  createHTMLForProduct(clubs);
+});
+
+let headcoversLink: HTMLLIElement = document.getElementById(
+  "headcoversLink"
+) as HTMLLIElement;
+
+headcoversLink.addEventListener("click", () => {
+  createHTMLForProduct(headcovers);
+});
+
+let ballsLink: HTMLLIElement = document.getElementById(
+  "ballsLink"
+) as HTMLLIElement;
+
+ballsLink.addEventListener("click", () => {
+  createHTMLForProduct(balls);
+});

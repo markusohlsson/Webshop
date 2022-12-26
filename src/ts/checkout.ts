@@ -19,24 +19,28 @@ let aTag: HTMLAnchorElement = document.createElement("a");
 aTag.href = "../pages/checkout.html";
 aTag.appendChild(cartButton);
 
-// let arrow:HTMLElement = document.createElement("i");
-// let arrowlink:HTMLAnchorElement = document.createElement("a");
-// arrow.className="fa-solid fa-arrow-left";
-// arrowlink.href="../pages/cart.html";
-// arrowlink.appendChild(arrow);
-// checkoutContainer.appendChild(arrowlink);
 
-function test() {
+
+
+
+// Totalsumma 
+let totalsumma=0;
+let totaleC = document.createElement("div") as HTMLDivElement;
+let totaleT = document.createElement("h3") as HTMLHeadingElement;
+let totale = document.createElement("p") as HTMLParagraphElement;
+let totaleK = document.createElement("span") as HTMLSpanElement;
+totale.id="";
+
+function collectFromLS() {
   var retrievedObject = JSON.parse(localStorage.getItem("cartList") || "");
-  let nylista: any[] = [];
+  let newList: any[] = [];
   for (let i = 0; i < retrievedObject.length; i++) {
-    nylista.push(retrievedObject);
+    newList.push(retrievedObject);
     console.log(retrievedObject);
   }
 
-  // måste ändra till engelskt namn på listan //
 
-  for (let i = 0; i < nylista.length; i++) {
+  for (let i = 0; i < newList.length; i++) {
     // let productsContainer = document.createElement("div");
     let productContainer = document.createElement("div");
     let title: HTMLHeadingElement = document.createElement("h3");
@@ -70,24 +74,45 @@ function test() {
     productContainer.appendChild(amountInput);
     // productsContainer.appendChild(productContainer);
     checkoutContainer.appendChild(productContainer);
+    
 
-      // Testar lite 
-      let totalAmount = document.createElement("p");
-      let sum = retrievedObject[i].amount;
-      let sumAmount = retrievedObject[i].price;
-      let totalSum = sum*sumAmount;
-      let totalSumAsString = JSON.stringify(totalSum);
-      totalAmount.innerHTML=totalSumAsString+" "+"kr";
-      totalAmount.className="product__sum";
-      productContainer.appendChild(totalAmount);
-      amountInput.addEventListener("change",()=>{
-        let sum:number = retrievedObject[i].amount;
-        let sumAmount:number = retrievedObject[i].price;
-        let totalSum:number = sum*sumAmount;
-        let totalSumAsString:string = JSON.stringify(totalSum);
-        totalAmount.innerHTML=totalSumAsString+" "+"kr";
-        console.log(totalSumAsString);
-      })
+    // Totalpris per produkt
+    let totalAmount = document.createElement("p");
+    let totalAmountSek = document.createElement("span");
+    let sum:number = retrievedObject[i].amount;
+    let sumAmount:number = retrievedObject[i].price;
+    let totalSum:number = sum*sumAmount;
+    let totalSumAsString:string = JSON.stringify(totalSum);
+    totalsumma +=totalSum;
+    totalAmount.innerHTML=totalSumAsString
+    totalAmount.className="product__sum";
+    totalAmount.id="product__sum";
+    totalAmountSek.innerHTML=" Kr"
+    totalAmount.appendChild(totalAmountSek)
+    productContainer.appendChild(totalAmount);
+
+    // totalsumma
+    totale.innerHTML=JSON.stringify(totalsumma);
+    totaleT.innerHTML="Totalsumma:";
+    totaleK.innerHTML=" Kr";
+    totaleC.appendChild(totaleT)
+    totaleC.appendChild(totale);
+    totale.appendChild(totaleK);
+
+    amountInput.addEventListener("change",()=>{
+      location.reload();
+      sum= retrievedObject[i].amount;
+      sumAmount = retrievedObject[i].price;
+      totalSum= sum*sumAmount;
+      totalSumAsString= JSON.stringify(totalSum);
+      totalAmount.innerHTML=totalSumAsString
+      totalAmount.appendChild(totalAmountSek)
+      console.log(totalSumAsString);
+      totale.innerHTML=JSON.stringify(totalsumma);
+      totaleC.appendChild(totaleT)
+      totaleC.appendChild(totale);
+      totale.appendChild(totaleK);
+    });
 
     amountInput.addEventListener("input", () => {
       if (retrievedObject[i].amount < amountInput.value) {
@@ -101,8 +126,8 @@ function test() {
   }
 }
 
-test();
-
+collectFromLS();
+checkoutContainer.appendChild(totaleC);
 // Shopping Cart
 let cartFormContainer: HTMLDivElement = document.getElementById(
   "checkoutContainer"
@@ -321,18 +346,29 @@ inputForPaymentTwo.id = "paymentTwo";
 button.innerHTML = "Slutför Köp";
 button.type = "submit";
 
+
+
 // Tack för ditt köp Test
 let testp: HTMLParagraphElement = document.createElement(
   "p"
 ) as HTMLParagraphElement;
 let x = inputforFirstname.value;
 testp.innerHTML = "Tack för ditt köp" + x + "!";
+let c = document.createElement("button") as HTMLButtonElement;
+c.innerHTML="Återgå till startsidan";
+let aTag2=document.createElement("a");
+aTag2.href="../index.html";
+aTag2.appendChild(c);
 
 //
 
+
+
 form.addEventListener("submit", function (event) {
   event.preventDefault();
+  localStorage.removeItem("cartList");
   checkoutContainer.innerHTML = "";
   cartFormContainer.appendChild(testp);
+  cartFormContainer.appendChild(aTag2);
 });
 Checkout();

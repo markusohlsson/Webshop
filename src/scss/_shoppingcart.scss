@@ -218,7 +218,7 @@
         }
     }
 
-    button {
+    #checkoutButton {
         display: block;
         position: fixed;
         bottom: 0px;
@@ -237,7 +237,7 @@
         }
     }
 
-    button:hover {
+    #checkoutButton:hover {
         cursor: pointer;
         font-size: larger;
     }

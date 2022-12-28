@@ -36,16 +36,16 @@ checkoutContainer.appendChild(titleForCheckout);
 checkoutContainer.appendChild(tHeader);
 
 // Totalsumma
-let totalAmountForAll = 0;
-let totalAmountForAllContainer = document.createElement(
+let totalAmountForAll:number = 0;
+let totalAmountForAllContainer:HTMLDivElement = document.createElement(
   "div"
 ) as HTMLDivElement;
 totalAmountForAllContainer.id = "totalAmountForAllContainer";
-let totalAmountForAllTitle = document.createElement("h3") as HTMLHeadingElement;
-let totalAmountForAllAmount = document.createElement(
+let totalAmountForAllTitle:HTMLHeadingElement = document.createElement("h3") as HTMLHeadingElement;
+let totalAmountForAllAmount:HTMLParagraphElement = document.createElement(
   "p"
 ) as HTMLParagraphElement;
-let totalAmountForAllKr = document.createElement("span") as HTMLSpanElement;
+let totalAmountForAllKr:HTMLSpanElement = document.createElement("span") as HTMLSpanElement;
 totalAmountForAllAmount.id = "";
 
 function collectFromLS() {
@@ -57,7 +57,7 @@ function collectFromLS() {
   }
 
   for (let i = 0; i < newList.length; i++) {
-    let productContainer = document.createElement("div");
+    let productContainer:HTMLDivElement = document.createElement("div");
     let title: HTMLHeadingElement = document.createElement("h3");
     let imageContainer: HTMLDivElement = document.createElement("div");
     let image: HTMLImageElement = document.createElement("img");
@@ -87,8 +87,8 @@ function collectFromLS() {
     checkoutContainer.appendChild(productContainer);
 
     // Totalpris per produkt
-    let totalAmountPerProduct = document.createElement("p");
-    let totalAmountPerProductSek = document.createElement("span");
+    let totalAmountPerProduct:HTMLParagraphElement = document.createElement("p");
+    let totalAmountPerProductSek:HTMLSpanElement = document.createElement("span");
     let sum: number = retrievedObject[i].amount;
     let sumAmount: number = retrievedObject[i].price;
     let totalSum: number = sum * sumAmount;
@@ -147,8 +147,6 @@ let formContainer: HTMLDivElement = document.createElement(
   "div"
 ) as HTMLDivElement;
 let form: HTMLFormElement = document.createElement("form") as HTMLFormElement;
-
-let z: HTMLAnchorElement = document.createElement("a") as HTMLAnchorElement;
 
 formContainer.className = "formContainer";
 
@@ -421,11 +419,11 @@ let thankYouTitle: HTMLHeadingElement = document.createElement(
 ) as HTMLHeadingElement;
 
 thankYouTitle.innerHTML = "Tack för ditt köp!";
-let backToStart = document.createElement("button") as HTMLButtonElement;
+let backToStart:HTMLButtonElement = document.createElement("button") as HTMLButtonElement;
 backToStart.innerHTML = "Återgå till startsidan";
 thankYouTitleContainer.className = "thankYouTitleContainer";
 backToStart.className = "backToStart";
-let backToStartLink = document.createElement("a");
+let backToStartLink:HTMLAnchorElement = document.createElement("a");
 backToStartLink.href = "../index.html";
 backToStartLink.appendChild(backToStart);
 

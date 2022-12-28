@@ -14,7 +14,7 @@ body {
             position:static;
             display:flex;
             height:100px;
-            background-color: #2a652c;
+            background-color: v.$hfcolor;
             width:100%;
                 @include m.desktop{
                 height:100px;
@@ -42,7 +42,7 @@ body {
                 margin:0;
 
                 a {
-                    color: white;
+                    color: v.$secondarycolor;
                 }
             }
 

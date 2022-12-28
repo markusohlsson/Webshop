@@ -26,7 +26,7 @@
 
     .product {
         width: 300px; 
-        border: 1px solid gray;
+        border: 1px solid v.$bordercolor;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -109,7 +109,7 @@
 
     .product:hover {
         cursor: pointer;
-        border: 3px solid gray;
+        border: 3px solid v.$bordercolor;
     }
 }
 

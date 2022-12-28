@@ -55,7 +55,7 @@
          align-items: center;
          padding: 10px;
          margin-top: 10px;
-         border-bottom: 2px solid white;
+         border-bottom: 2px solid v.$secondarycolor;
          background-color: rgb(202, 249, 227);
  
          @include m.desktop {
@@ -73,7 +73,7 @@
          justify-content: left;
          cursor: pointer;
          text-decoration: none;
-         color: black;
+         color: v.$primarycolor;
          
          i{
              display: flex;
@@ -224,8 +224,8 @@
         padding: 50px;
         gap: 10px;
         margin-bottom: 0px;
-        border-top: 1px solid grey;
-        border-bottom: 1px solid grey;
+        border-top: 1px solid v.$bordercolor;
+        border-bottom: 1px solid v.$bordercolor;
 
         @include m.desktop {
             padding: 20px;
@@ -319,7 +319,7 @@ input[type=number]::-webkit-outer-spin-button {
             margin: 0;
             margin-top: 25px;
             background-color: v.$fifthcolor;
-            color: white;
+            color: v.$secondarycolor;
             font-size: large;
     
             @include m.desktop {

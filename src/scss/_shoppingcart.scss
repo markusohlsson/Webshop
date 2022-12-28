@@ -58,7 +58,7 @@
         align-items: center;
         padding: 10px;
         margin-top: 10px;
-        border-bottom: 2px solid white;
+        border-bottom: 2px solid v.$secondarycolor;
         background-color: rgb(202, 249, 227);
 
         @include m.desktop {
@@ -79,7 +79,7 @@
         // färg etc
         cursor: pointer;
         text-decoration: none;
-        color: black;
+        color: v.$primarycolor;
         
         i{
             display: flex;
@@ -231,7 +231,7 @@
 
         #clearCart {
             text-align: center;
-            background-color: white;
+            background-color: v.$secondarycolor;
 
             @include m.desktop {
                 padding: 5px;
@@ -262,7 +262,7 @@
             position: fixed;
             bottom: 15px;
             right: 25px;
-            background-color: white;
+            background-color: v.$secondarycolor;
 
         }
 
@@ -307,7 +307,7 @@
         width: 100%;
         margin: 0;
         background-color: v.$fifthcolor;
-        color: white;
+        color: v.$secondarycolor;
         font-size: large;
 
         @include m.desktop {

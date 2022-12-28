@@ -7,6 +7,12 @@ import { Product } from "./models/Product";
 // aStartpage.href = "../index.html#productsContainer";
 // arrow.appendChild(aStartpage);
 
+let away: HTMLHeadingElement = document.getElementById(
+  "hamburgericonbtn"
+) as HTMLHeadingElement;
+
+away.style.opacity = "0";
+
 // hämta från LS //
 let testListString: string = localStorage.getItem("savedProductList") || "";
 let listProduct: Product = JSON.parse(testListString);

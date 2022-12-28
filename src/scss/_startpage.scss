@@ -8,10 +8,9 @@ body {
     position: relative;
 
     .welcome__page{
-        // position:fixed;
         width:100%;
 
-        .welcome__page__navigation{ // kan skriva &__navigation 
+        .welcome__page__navigation{ 
             position:static;
             display:flex;
             height:100px;
@@ -35,8 +34,7 @@ body {
                 }
             }
 
-            .welcome__page__navigation__icon{
-                // color:v.$secondarycolor;  
+            .welcome__page__navigation__icon{ 
                 display: flex;
                 justify-content: space-around;
                 width:25%;
@@ -126,7 +124,7 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-    .welcome__page__textbox__title{  // kan skriva i den ovan och sen skriva &__title //
+    .welcome__page__textbox__title{  
         margin:0;
         display:flex;
         color:v.$secondarycolor;

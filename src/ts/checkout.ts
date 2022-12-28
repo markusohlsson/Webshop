@@ -6,6 +6,12 @@ let titleForCheckout: HTMLHeadingElement = document.createElement(
 ) as HTMLHeadingElement;
 titleForCheckout.innerHTML = "Kassa";
 
+let away: HTMLHeadingElement = document.getElementById(
+  "hamburgericonbtn"
+) as HTMLHeadingElement;
+
+away.style.opacity = "0";
+
 // rubrikraden //
 
 let tHeader: HTMLDivElement = document.createElement("div") as HTMLDivElement;
@@ -409,14 +415,16 @@ button.type = "submit";
 button.id = "purchaseButton";
 
 // Tack för ditt köp
+let thankYouTitleContainer: HTMLDivElement = document.createElement("div");
 let thankYouTitle: HTMLHeadingElement = document.createElement(
   "h3"
 ) as HTMLHeadingElement;
-let thankYouParagraph: HTMLParagraphElement = document.createElement("p");
 
 thankYouTitle.innerHTML = "Tack för ditt köp!";
 let backToStart = document.createElement("button") as HTMLButtonElement;
 backToStart.innerHTML = "Återgå till startsidan";
+thankYouTitleContainer.className = "thankYouTitleContainer";
+backToStart.className = "backToStart";
 let backToStartLink = document.createElement("a");
 backToStartLink.href = "../index.html";
 backToStartLink.appendChild(backToStart);
@@ -425,8 +433,8 @@ form.addEventListener("submit", function (event) {
   event.preventDefault();
   localStorage.removeItem("cartList");
   checkoutContainer.innerHTML = "";
-  cartFormContainer.appendChild(thankYouTitle);
-  cartFormContainer.appendChild(thankYouParagraph);
-  cartFormContainer.appendChild(backToStartLink);
+  thankYouTitleContainer.appendChild(thankYouTitle);
+  thankYouTitleContainer.appendChild(backToStartLink);
+  cartFormContainer.appendChild(thankYouTitleContainer);
 });
 Checkout();

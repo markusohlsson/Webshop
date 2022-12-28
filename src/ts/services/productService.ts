@@ -116,7 +116,7 @@ export let productList: Product[] = [
   tp5Spider,
 ];
 
-/* Funktioner */
+/* Vidare */
 
 let bigContainer: HTMLDivElement = document.getElementById(
   "productsContainer"
@@ -127,7 +127,7 @@ let readMoreButton: HTMLButtonElement = document.createElement("button");
 let headingAllProducts: HTMLHeadingElement = document.createElement("h2");
 headingAllProducts.innerHTML = "Alla produkter";
 bigContainer.appendChild(headingAllProducts);
-headingAllProducts.className = "headingProducts"; //ändra namn//
+headingAllProducts.className = "headingProducts";
 
 export function createHTMLForProduct(products: Product[]) {
   for (let i: number = 0; i < products.length; i++) {
@@ -137,8 +137,6 @@ export function createHTMLForProduct(products: Product[]) {
     let imageContainer: HTMLDivElement = document.createElement("div");
     let image: HTMLImageElement = document.createElement("img");
     let price: HTMLParagraphElement = document.createElement("p");
-    // let description: HTMLParagraphElement = document.createElement("p");
-    // let amountInput: HTMLInputElement = document.createElement("input");
     readMoreButton = document.createElement("button");
 
     let a: HTMLAnchorElement = document.createElement("a");
@@ -150,29 +148,21 @@ export function createHTMLForProduct(products: Product[]) {
     imageContainer.className = "product__imageContainer";
     image.className = "product__imageContainer__img";
     price.className = "product__price";
-    // description.className = "product__description";
-    // amountInput.type = "number";
 
     readMoreButton.id = "buttonMore";
-    // let amount:number = amountInput.valueAsNumber;
 
     a.href = "/pages/productpage.html";
     a2.href = "/pages/productpage.html";
     a2.id = "a2";
 
     title.innerHTML = products[i].title;
-    price.innerHTML = products[i].price + " " + "kr"; // måste göra om till number sen
-    // description.innerHTML = products[i].description;
-    // addToCartButton.innerHTML = "Lägg i varukorg";
+    price.innerHTML = products[i].price + " " + "kr";
     readMoreButton.innerHTML = "Läs mer...";
 
     productContainer.appendChild(title);
     productContainer.appendChild(imageContainer);
     imageContainer.appendChild(image);
-    // productContainer.appendChild(description);
     productContainer.appendChild(price);
-    // productContainer.appendChild(amountInput);
-    // productContainer.appendChild(addToCartButton);
     a.appendChild(readMoreButton);
 
     productDiv.appendChild(a2);
@@ -181,7 +171,6 @@ export function createHTMLForProduct(products: Product[]) {
 
     productDiv.appendChild(productContainer);
     bigContainer.appendChild(productDiv);
-    // productPageContainer.appendChild(productDiv);
 
     productDiv.addEventListener("click", () => {
       localStorage.setItem("savedProductList", JSON.stringify(productList[i]));
@@ -193,7 +182,7 @@ export function createHTMLForProduct(products: Product[]) {
   }
 }
 
-/*Kategorierna*/
+/* Kategorierna */
 
 let allProductsLink: HTMLLIElement = document.getElementById(
   "allProductsLink"

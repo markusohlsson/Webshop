@@ -1,11 +1,6 @@
 import { Product } from "./models/Product";
 
-// Pilen //
-
-// let arrow: Element = document.getElementById("arrow") as HTMLElement;
-// let aStartpage: HTMLAnchorElement = document.createElement("a");
-// aStartpage.href = "../index.html#productsContainer";
-// arrow.appendChild(aStartpage);
+// ta bort ikon //
 
 let away: HTMLHeadingElement = document.getElementById(
   "hamburgericonbtn"
@@ -14,10 +9,12 @@ let away: HTMLHeadingElement = document.getElementById(
 away.style.opacity = "0";
 
 // hämta från LS //
+
 let testListString: string = localStorage.getItem("savedProductList") || "";
 let listProduct: Product = JSON.parse(testListString);
 
 // varukorgslistan //
+
 let cartList: Product[] = [];
 
 function createHTMLForProductPage(productList: Product) {
@@ -34,7 +31,6 @@ function createHTMLForProductPage(productList: Product) {
   let price: HTMLParagraphElement = document.createElement("p");
   let description: HTMLParagraphElement = document.createElement("p");
   let addToCartButton: HTMLButtonElement = document.createElement("button");
-  let amountInput: HTMLInputElement = document.createElement("input");
 
   productPageContainer.className = "product" + "__" + productList.id;
   title.className = "product__textContainer__title";
@@ -44,12 +40,9 @@ function createHTMLForProductPage(productList: Product) {
   price.className = "product__textContainer__price";
   description.className = "product__textContainer__description";
   addToCartButton.className = "product__textContainer__addToCartButton";
-  // amountInput.type = "number";
-
-  // let amount:number = amountInput.valueAsNumber;
 
   title.innerHTML = productList.title;
-  price.innerHTML = productList.price + " " + "kr"; // måste göra om till number sen
+  price.innerHTML = productList.price + " " + "kr";
   description.innerHTML = productList.description;
   addToCartButton.innerHTML = "Lägg i varukorg";
 
@@ -58,7 +51,6 @@ function createHTMLForProductPage(productList: Product) {
   textContainer.appendChild(title);
   textContainer.appendChild(description);
   textContainer.appendChild(price);
-  // productPageContainer.appendChild(amountInput);
   textContainer.appendChild(addToCartButton);
 
   productPageContainer.appendChild(textContainer);

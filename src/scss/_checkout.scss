@@ -336,4 +336,47 @@ input[type=number]::-webkit-outer-spin-button {
              font-size: larger;
          }
     }
+
+    .thanksContainer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 80vh;
+
+        h3{
+            margin: 0px;
+            font-size: 30px;
+            color: v.$hfcolor;
+
+        }
+
+        a{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            text-decoration: none;
+            margin-top: 50px;
+
+            button{
+                height: 75px;
+                width: 300px;
+                color: white;
+                background-color: v.$hfcolor;
+                font-size: large;
+                border: 1px solid black;
+
+                @include m.desktop {
+                    width: 350px;     
+                }
+            }
+        }
+
+        button:hover {
+            cursor: pointer;
+            font-size: larger;
+        }
+
+    }
 }

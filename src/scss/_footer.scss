@@ -30,7 +30,7 @@ footer {
 
         li {
             margin: 5px;
-            color: white;
+            color: v.$secondarycolor;
             padding:5px;
 
             @include m.desktop {
@@ -61,7 +61,7 @@ footer {
 
         a {
             i {
-                color: white;
+                color: v.$secondarycolor;
                 margin: 0px;
                 padding: 20px;
                 font-size: 26px;

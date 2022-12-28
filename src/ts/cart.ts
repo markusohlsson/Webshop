@@ -56,7 +56,7 @@ let totalAmountForAllContainer = document.createElement(
   "div"
 ) as HTMLDivElement;
 totalAmountForAllContainer.id = "totalAmountForAllContainer";
-let totalAmountForAllTitle = document.createElement("h3") as HTMLHeadingElement;
+let totalAmountForAllTitle:HTMLHeadingElement = document.createElement("h3") as HTMLHeadingElement;
 let totalAmountForAllAmount = document.createElement(
   "p"
 ) as HTMLParagraphElement;
@@ -110,7 +110,7 @@ function collectFromLS() {
 
     // Totalpris per produkt
     let totalAmount: HTMLParagraphElement = document.createElement("p");
-    let totalAmountSek = document.createElement("span");
+    let totalAmountSek:HTMLSpanElement = document.createElement("span");
     let sum: number = retrievedObject[i].amount;
     let sumAmount: number = retrievedObject[i].price;
     let totalSum: number = sum * sumAmount;

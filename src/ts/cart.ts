@@ -9,6 +9,12 @@ let title: HTMLHeadingElement = document.createElement(
 ) as HTMLHeadingElement;
 title.innerHTML = "Varukorg";
 
+let away: HTMLHeadingElement = document.getElementById(
+  "hamburgericonbtn"
+) as HTMLHeadingElement;
+
+away.style.opacity = "0";
+
 // rubrikraden //
 
 let tHeader: HTMLDivElement = document.createElement("div") as HTMLDivElement;
@@ -70,7 +76,7 @@ function collectFromLS() {
   }
 
   for (let i = 0; i < newList.length; i++) {
-    let productContainer = document.createElement("div");
+    let productContainer: HTMLDivElement = document.createElement("div");
     let title: HTMLHeadingElement = document.createElement("h3");
     let imageContainer: HTMLDivElement = document.createElement("div");
     let image: HTMLImageElement = document.createElement("img");
@@ -103,7 +109,7 @@ function collectFromLS() {
     shoppingCartContainer.appendChild(productContainer);
 
     // Totalpris per produkt
-    let totalAmount = document.createElement("p");
+    let totalAmount: HTMLParagraphElement = document.createElement("p");
     let totalAmountSek = document.createElement("span");
     let sum: number = retrievedObject[i].amount;
     let sumAmount: number = retrievedObject[i].price;

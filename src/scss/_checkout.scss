@@ -1,5 +1,6 @@
 @use "variables" as v;
 @use "mixins" as m;
+
 #cart:hover {
     color:v.$sixthcolor;
     cursor: pointer;
@@ -70,7 +71,6 @@
      #arrowLink {
          display: flex;
          justify-content: left;
-         // färg etc
          cursor: pointer;
          text-decoration: none;
          color: black;
@@ -158,7 +158,6 @@
          &__title {
             font-size: 15px;
             text-align: center;
-            // justify-content: center;
             margin: 0px;               
             margin-top: 5px;
 
@@ -174,8 +173,6 @@
         &__price {
             font-size: 15px;
             text-align: center;
-            // display: flex;
-            // justify-content: center;
             margin: 0px;
             margin-top: 5px;
 
@@ -188,8 +185,6 @@
         }
  
          &__amountInput{
-            // display: flex;
-            // justify-content: center;
             width: 80px; 
             text-align: center;
             font-size:15px;
@@ -220,8 +215,6 @@
         }
      }
  
-
-
      #totalAmountForAllContainer {
         display: flex;
         flex-direction: row;
@@ -235,8 +228,6 @@
         border-bottom: 1px solid grey;
 
         @include m.desktop {
-            // justify-content: flex-end;
-            // margin-right: 25px;
             padding: 20px;
             padding-right: 0px;
             margin-bottom: 75px;
@@ -244,10 +235,7 @@
             position: fixed;
             bottom: 15px;
             right: 25px;
-            // background-color: white;
             border: none;
-
-
         }
 
         h3 {
@@ -278,8 +266,6 @@
             }
         }
     }
- 
-
 
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button {  
@@ -290,7 +276,6 @@ input[type=number]::-webkit-outer-spin-button {
     .formContainer{
         display: flex;
         width:100%;
-        // background-color: aliceblue;
 
         @include m.desktop {
             padding-bottom: 50px;

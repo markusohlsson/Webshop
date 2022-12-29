@@ -22,7 +22,8 @@
             flex-direction: row;
             gap: 30px;
             padding: 0px;
-            margin-left: 25px;
+            padding-left: 25px;
+            border-bottom: 1px solid lightgray;
         }
 
         &__tPrice {
@@ -58,8 +59,7 @@
         align-items: center;
         padding: 10px;
         margin-top: 10px;
-        border-bottom: 2px solid v.$secondarycolor;
-        background-color: rgb(202, 249, 227);
+        border-bottom: 1px solid lightgray;
 
         @include m.desktop {
             flex-direction: row;
@@ -76,7 +76,6 @@
     #arrowLink {
         display: flex;
         justify-content: left;
-        // färg etc
         cursor: pointer;
         text-decoration: none;
         color: v.$primarycolor;

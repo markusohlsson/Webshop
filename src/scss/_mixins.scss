@@ -1,0 +1,42 @@
+@use "variables" as v;
+
+/* Responsivitet */
+
+    @mixin desktop {
+        @media screen and (min-width:v.$desktop_breakpoint) {
+            @content;
+        }     
+    }
+
+/* Produkterna */
+
+@mixin product($background-image: url("../assets/Golfcourse_image.jpg")){
+    .product { 
+        &__imageContainer {
+        display: flex;
+        justify-content: center;
+
+            &__img {
+                background-image: $background-image;
+                background-position: center; 
+                background-size: contain;
+                height: 250px;
+                width: 250px;
+            }
+        }
+    }
+}
+
+@mixin productPage($background-image: url("../assets/Golfcourse_image.jpg")){
+    .product { 
+        &__imageContainer {
+        display: flex;
+
+            &__img {
+                background-image: $background-image;
+                background-position: center; 
+                background-size: contain;
+            }
+        }
+    }
+}

@@ -7,8 +7,78 @@
     <title>Golf</title>
     <link href="scss/main.scss" rel="stylesheet" />
     <script src="ts/main.ts" type="module" defer></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Rubik"
+      rel="stylesheet" />
+    <script
+      src="https://kit.fontawesome.com/91e262819b.js"
+      crossorigin="anonymous"></script>
   </head>
   <body>
-    <p>Hej hej</p>
+    <header class="welcome__page" id="home">
+      <nav class="welcome__page__navigation">
+        <h2
+          class="welcome__page__navigation__icon__hamburger"
+          id="hamburgericonbtn">
+          <i class="fa-solid fa-bars" id="hamburgericon"></i>
+        </h2>
+        <h2 class="welcome__page__navigation__title">
+          <a href="index.html"
+            ><i class="fa-solid fa-golf-ball-tee"></i>Golfsaker</a
+          >
+        </h2>
+        <h2 class="welcome__page__navigation__icon">
+          <a href="pages/cart.html">
+            <i id="cart" class="fa-solid fa-cart-shopping"></i
+          ></a>
+        </h2>
+      </nav>
+      <div class="navigationlinks" id="navmenu">
+        <ul class="navigationlinks_button">
+          <li id="allProductsLink">
+            <a href="#productsContainer">Alla produkter</a>
+          </li>
+          <li id="clubsLink"><a href="#productsContainer">Golfklubbor</a></li>
+          <li id="headcoversLink">
+            <a href="#productsContainer">Headcovers</a>
+          </li>
+          <li id="ballsLink"><a href="#productsContainer">Golfbollar</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <figure class="startpage">
+      <figcaption class="welcome__page__textbox">
+        <h2 class="welcome__page__textbox__title">Välkommen till oss!</h2>
+        <h3 class="welcome__page__textbox__text">
+          Här hittar du de bästa golfsakerna
+        </h3>
+      </figcaption>
+    </figure>
+
+    <div id="productsContainer"></div>
+
+    <div id="shoppingCartContainer"></div>
+    <div id="aboutUsContainer"></div>
+    <div id="contactUsContainer"></div>
+    <div id="checkoutContainer"></div>
+
+    <footer>
+      <ul>
+        <li id="about">Om oss</li>
+        <li id="contact">Kontakt</li>
+      </ul>
+      <div id="socialMediaContainer">
+        <a href="https://www.facebook.com/" target="_blank"
+          ><i class="fa-brands fa-facebook"></i
+        ></a>
+        <a href="https://www.instagram.com/" target="_blank"
+          ><i class="fa-brands fa-instagram"></i
+        ></a>
+        <a href="https://twitter.com/" target="_blank"
+          ><i class="fa-brands fa-twitter"></i
+        ></a>
+      </div>
+    </footer>
   </body>
 </html>

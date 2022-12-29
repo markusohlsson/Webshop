@@ -1,0 +1,122 @@
+@use "mixins" as m;
+@use "variables" as v;
+
+#productsContainer {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+
+    @include m.desktop {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 20px;
+        gap: 20px;
+        justify-content: space-around;
+    }
+
+    .headingProducts{           //ändra namn//
+        width: 100%;
+        margin: 0;
+        text-align: center;
+
+        @include m.desktop {
+        }
+    }                
+
+    .product {
+        width: 300px; 
+        border: 1px solid v.$bordercolor;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        margin-top: 10px;
+        background-color: rgb(243, 243, 243);
+
+        @include m.desktop {
+            // width: 300px;
+        }
+
+        &__title {
+            font-size: 20px;
+            text-align: center;
+            margin: 0px;
+            margin-bottom: 5px;
+        }
+
+        &__price {
+            font-size: 20px;
+            text-align: center;
+            margin: 0px;
+            margin-top: 5px;
+        }
+
+        &__headcover1 {
+            @include m.product(url("../assets/products/Headcover_1.jpg"));
+        }
+
+        &__headcover2 {
+            @include m.product(url("../assets/products/Headcover_2.jpg"));
+        }
+
+        &__headcover3 {
+            @include m.product(url("../assets/products/Headcover_3.jpg"));
+        }
+
+        &__proFliHi {
+            @include m.product(url("../assets/products/Pro_Fli_Hi.jpg"));
+        }
+
+        &__stealthUDI {
+            @include m.product(url("../assets/products/Stealth_UDI.png"));
+        }
+
+        &__u510 {
+            @include m.product(url("../assets/products/U510.jpg"));
+        }
+
+        &__tp5Pop {
+            @include m.product(url("../assets/products/TP5_PIX_ROCKET_POP.jpg"));
+        }
+
+        &__tp5Sushi {
+            @include m.product(url("../assets/products/TP5_PIX_SUSHI.jpg"));
+        }
+
+        &__tp5Spider {
+            @include m.product(url("../assets/products/TP5_PIX_SPIDER.jpg"));
+        }
+
+        a {
+            display: flex;
+            justify-content: right;
+            text-decoration: none;
+
+            #buttonMore {
+                
+            } 
+        }
+
+        #a2 {
+            position: absolute;
+            width: 250px;
+            height: 250px;
+        }
+
+
+    }
+
+    .product:hover {
+        cursor: pointer;
+        border: 3px solid v.$bordercolor;
+    }
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,186 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+#productPageBigContainer {
+    position: fixed;    
+    top: 100px;
+    width: 100%;
+    height: 100vh;
+    background-color: v.$secondarycolor;
+
+    @include m.desktop {
+    }
+
+    #arrowLink {
+        display: flex;
+        justify-content: left;
+        cursor: pointer;
+        text-decoration: none;
+        color: v.$primarycolor;
+        
+        i{
+            display: flex;
+            font-size: 20px;
+            height: 30px;
+            justify-content: left;
+            margin-top: 10px;
+            margin-left: 10px;
+
+            @include m.desktop {
+                margin-left: 15px;
+            }
+        }
+
+        i:hover {
+            cursor: pointer;
+            font-size: 25px;
+        }
+    }
+
+    #productPageContainer {
+        display: flex;
+        flex-direction: column;
+
+        @include m.desktop {
+            flex-direction: row;
+        }
+    }
+
+    .product {
+        &__headcover1 {
+            @include m.productPage(url("../assets/products/Headcover_1.jpg"));
+        }
+    
+        &__headcover2 {
+            @include m.productPage(url("../assets/products/Headcover_2.jpg"));
+        }
+    
+        &__headcover3 {
+            @include m.productPage(url("../assets/products/Headcover_3.jpg"));
+        }
+    
+        &__proFliHi {
+            @include m.productPage(url("../assets/products/Pro_Fli_Hi.jpg"));
+        }
+    
+        &__stealthUDI {
+            @include m.productPage(url("../assets/products/Stealth_UDI.png"));
+        }
+    
+        &__u510 {
+            @include m.productPage(url("../assets/products/U510.jpg"));
+        }
+    
+        &__tp5Pop {
+            @include m.productPage(url("../assets/products/TP5_PIX_ROCKET_POP.jpg"));
+        }
+    
+        &__tp5Sushi {
+            @include m.productPage(url("../assets/products/TP5_PIX_SUSHI.jpg"));
+        }
+    
+        &__tp5Spider {
+            @include m.productPage(url("../assets/products/TP5_PIX_SPIDER.jpg"));
+        }
+
+            &__imageContainer {
+                display: flex;
+                justify-content: center;
+
+                @include m.desktop {
+                    justify-content: left;
+                    margin-left: 25px;
+                }
+
+                &__img {
+                    background-position: center; 
+                    background-size: contain;
+                    width: 300px;
+                    height: 300px;
+
+                    @include m.desktop {
+                        width: 600px;
+                        height: 600px;
+                        display: flex;
+                        justify-content: left;
+                        background-repeat: no-repeat;
+                    }
+                }   
+            } 
+
+        &__textContainer {
+            flex-direction: column;
+
+            &__title {
+                font-size: 20px;
+                text-align: center;
+                margin: 0px;
+                margin-top: 15px;
+
+                @include m.desktop {
+                    text-align: left;
+                    margin-left: 25px;
+                }
+            }
+            
+            &__description {
+                display: block;
+                position: relative;
+                text-align: center;
+                padding: 0px 30px 0px 30px;
+
+                @include m.desktop { 
+                    width: 450px;
+                    text-align: left;
+                    position: relative;
+                    left: 25px;
+                    padding: 0px;
+                }
+            }
+
+            &__price {
+                font-size: 20px;
+                text-align: center;
+                margin: 0px;
+                margin-top: 5px;
+
+                @include m.desktop {
+                    text-align: left;
+                    margin-left: 25px;
+                }
+            }
+
+            // &__amountInput {
+                
+            // }
+
+            &__addToCartButton {
+                display: block;
+                position: fixed;
+                bottom: 0px;
+                height: 75px;
+                width: 100%;
+                margin: 0;
+                background-color: v.$fifthcolor;
+                color: v.$secondarycolor;
+                font-size: large;
+
+                @include m.desktop {
+                    height: 75px; 
+                    width: 350px;   
+                    bottom: 25px;
+                    right: 25px;    
+                }
+            }
+
+            button:hover {
+                cursor: pointer;
+                font-size: larger;
+            }
+        }
+    }    
+}
+
+
+
+
